@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ComputerRoomManagementUTC.Models;
+using ComputerRoomManagement.BUS;
 
 namespace ComputerRoomManagementUTC.Controllers
 {
@@ -12,6 +13,8 @@ namespace ComputerRoomManagementUTC.Controllers
     {
         public IActionResult Index()
         {
+            RamBusiness ramBusiness = new RamBusiness();
+            var a = ramBusiness.GetAll();
             return View();
         }
 
