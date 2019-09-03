@@ -12,12 +12,13 @@ namespace ComputerRoomManagement.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("Login");
         }
 
-        public IActionResult Login()
+        public IActionResult Login(Login login)
         {
-            return View();
+            var a = login;
+            return Json(login);
         }
 
         //public IActionResult Login(Account account)

@@ -30,3 +30,4 @@ C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementU
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.csproj.CopyComplete
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\Common.dll
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\Common.pdb
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs

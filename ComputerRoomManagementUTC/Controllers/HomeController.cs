@@ -13,6 +13,9 @@ namespace ComputerRoomManagementUTC.Controllers
     {
         public IActionResult Index()
         {
+            // if (!User.IsLogged())
+            return Redirect(Url.Action("Login", "Account"));
+            // else return dashboard
             RamBusiness ramBusiness = new RamBusiness();
             var a = ramBusiness.GetAll();
             return View();
