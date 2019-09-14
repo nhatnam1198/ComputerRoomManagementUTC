@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ComputerRoomManagementUTC.Models;
 using ComputerRoomManagement.BUS;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ComputerRoomManagementUTC.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
-            // if (!User.IsLogged())
-            return Redirect(Url.Action("Login", "Account"));
+
+            return View();
             // else return dashboard
             RamBusiness ramBusiness = new RamBusiness();
             var a = ramBusiness.GetAll();

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "9730342b7b575aaeb702fae13ca2a10b3cc123ef"
+    "signature": "35190d472b546cab3f2ec09bc774a5a3db8bccfc"
   },
   "compilationOptions": {
     "defines": [
@@ -26,8 +26,10 @@
         "dependencies": {
           "Common": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
+          "Microsoft.Owin.Security.Jwt": "4.0.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3"
         },
         "runtime": {
@@ -70,6 +72,70 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
+        }
+      },
+      "Microsoft.Owin/4.0.1": {
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.14582.116"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/4.0.1": {
+        "dependencies": {
+          "Microsoft.Owin": "4.0.1",
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.14582.116"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Jwt/4.0.1": {
+        "dependencies": {
+          "Microsoft.Owin": "4.0.1",
+          "Microsoft.Owin.Security": "4.0.1",
+          "Microsoft.Owin.Security.OAuth": "4.0.1",
+          "Owin": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.3.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.Jwt.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.14582.116"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.Jwt.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/4.0.1": {
+        "dependencies": {
+          "Microsoft.Owin": "4.0.1",
+          "Microsoft.Owin.Security": "4.0.1",
+          "Newtonsoft.Json": "11.0.2",
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.14582.116"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
         }
       },
       "Microsoft.VisualStudio.Web.CodeGeneration/2.2.3": {
@@ -204,6 +270,17 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "runtime": {
+          "lib/net40/Owin.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "System.Composition/1.0.31": {
@@ -3567,6 +3644,34 @@
       "path": "microsoft.codeanalysis.workspaces.common/2.8.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.2.8.0.nupkg.sha512"
     },
+    "Microsoft.Owin/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J3v8nn9ABr5rm22EOyvndAP/gjP2AnhhfZuI2A7lTPO4+j27SpVv6P/Zs29+/AzSpC8qkE6GIe43vodPMF5DpA==",
+      "path": "microsoft.owin/4.0.1",
+      "hashPath": "microsoft.owin.4.0.1.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4VOvzEBlN+4OQIgsBYCt81cUjJ5ZbuUBZcf/LzqBT5KELskRA9zQ6z/qyh2NPIci8e0z+eJIAMHZTyNDf+QunQ==",
+      "path": "microsoft.owin.security/4.0.1",
+      "hashPath": "microsoft.owin.security.4.0.1.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security.Jwt/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3QKfmV/6ZZ4B5G6iEdHhQuj+cENdj3xd8Z9SqngIdSEtc3p4kthhHeP3fPLJM1etL6nteCraMlzy5KLYrwX1SA==",
+      "path": "microsoft.owin.security.jwt/4.0.1",
+      "hashPath": "microsoft.owin.security.jwt.4.0.1.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security.OAuth/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KhxNb81lYqbOnn6cad999pskXkEAwftRSd0MSYb6wAMpM5E8686VY4neEqqdKg60x96P/nAtlGPLqiyNimd9nw==",
+      "path": "microsoft.owin.security.oauth/4.0.1",
+      "hashPath": "microsoft.owin.security.oauth.4.0.1.nupkg.sha512"
+    },
     "Microsoft.VisualStudio.Web.CodeGeneration/2.2.3": {
       "type": "package",
       "serviceable": true,
@@ -3629,6 +3734,13 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "Owin/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
+      "path": "owin/1.0.0",
+      "hashPath": "owin.1.0.0.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",

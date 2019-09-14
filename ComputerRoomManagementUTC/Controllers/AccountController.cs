@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Common.Common;
 using ComputerRoomManagement.Models.Account;
+using ComputerRoomManagementUTC.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputerRoomManagement.Controllers
@@ -17,8 +19,17 @@ namespace ComputerRoomManagement.Controllers
 
         public IActionResult Login(Login login)
         {
-            var a = login;
-            return Json(login);
+             AccountService loginService = new AccountService();
+            if (loginService.IsAuthenticate(login))
+            {
+                var token = loginService.CreateToken();
+                HttpContext.Request.Headers.Add("Authorizaion", "Bearer " + token);
+                return View("PreLoader");
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         //public IActionResult Login(Account account)
