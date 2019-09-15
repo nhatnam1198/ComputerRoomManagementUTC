@@ -10,22 +10,20 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ComputerRoomManagementUTC.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
+        [Authorize]
+        [HttpGet]
         public IActionResult Index()
         {
-
-            return View();
-            // else return dashboard
-            RamBusiness ramBusiness = new RamBusiness();
-            var a = ramBusiness.GetAll();
             return View();
         }
 
+        
+
         public IActionResult Privacy()
         {
-            return View();
+            return PartialView();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

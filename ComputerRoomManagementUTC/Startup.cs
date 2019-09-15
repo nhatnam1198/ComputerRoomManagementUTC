@@ -34,17 +34,15 @@ namespace ComputerRoomManagementUTC
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(x =>
                 {
                     x.TokenValidationParameters = new TokenValidationParameters()
                     {
                         RequireExpirationTime = true,
                         ValidateIssuerSigningKey = true,
+                        ValidateAudience = false,
+                        ValidateIssuer = false,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("hasagidzoooooooooo"))
                     };
 
@@ -66,6 +64,7 @@ namespace ComputerRoomManagementUTC
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

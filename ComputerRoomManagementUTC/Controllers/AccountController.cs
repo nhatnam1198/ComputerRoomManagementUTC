@@ -6,6 +6,7 @@ using Common.Common;
 using ComputerRoomManagement.Models.Account;
 using ComputerRoomManagementUTC.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputerRoomManagement.Controllers
@@ -23,12 +24,15 @@ namespace ComputerRoomManagement.Controllers
             if (loginService.IsAuthenticate(login))
             {
                 var token = loginService.CreateToken();
-                HttpContext.Request.Headers.Add("Authorizaion", "Bearer " + token);
+                
+                 HttpContext.Request.Headers.Add("Authorizaion", "Bearer " + token);
+                ViewBag.Token = token;
+                var a = Url.Action("Index", "Home");
                 return View("PreLoader");
             }
             else
             {
-                return NotFound();
+                return Unauthorized();
             }
         }
 
