@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
     var jwtToken = ViewBag.Token;
 }
@@ -36,18 +35,22 @@
     $(document).ready(function () {
         setTimeout(function () {
             $.ajax({
-                url: 'https://localhost:44388/home/index',
+                url: 'https://localhost:44388/Home/Index',
                 method: 'GET',
                 type: 'GET',
+                dataType: 'json',
                 beforeSend: function (request) {
-                    request.setRequestHeader("Authorization", 'Bearer ' + '@jwtToken');
                 },
-                success: function (res) {
-                    console.log(res)
-                    $(document).replaceWith($(res));
+                success: function (respone) {
+                    console.log(respone);
+                    console.log("OK");
+                    console.log(respone.redirect);
+                    if (respone) {
+
+                    }
                 }
-            });
-        });
+            })
+        }, 2000)
     })
 
 </script>

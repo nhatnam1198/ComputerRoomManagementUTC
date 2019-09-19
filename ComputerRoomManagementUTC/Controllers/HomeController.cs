@@ -5,21 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ComputerRoomManagementUTC.Models;
-using ComputerRoomManagement.BUS;
 using Microsoft.AspNetCore.Authorization;
 
 namespace ComputerRoomManagementUTC.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
-
-        
 
         public IActionResult Privacy()
         {
