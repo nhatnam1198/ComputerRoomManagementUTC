@@ -13079,6 +13079,7 @@
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Cryptography.KeyDerivation >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
+      "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.Owin.Security.Jwt >= 4.0.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3"
@@ -13141,6 +13142,10 @@
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.Session": {
             "target": "Package",
             "version": "[2.2.0, )"
           },

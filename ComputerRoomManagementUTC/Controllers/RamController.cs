@@ -21,7 +21,7 @@ namespace InsideApi.Controllers
         {
             //RamBusiness ramBusiness = new RamBusiness();
             //var result = ramBusiness.GetAllRamSearched(condition);
-            var ramList = result.ItemList;
+            //var ramList = result.ItemList;
             return View();
         }
     }

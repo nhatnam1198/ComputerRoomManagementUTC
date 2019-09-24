@@ -29,7 +29,7 @@ namespace InsideAPI.Services
             UserBusiness userBusiness = new UserBusiness();
             var result = userBusiness.GetUserByUserName(login);
             // Get the value of the "HashedPassword" column in db"
-            var storageHashedPasswod = result.Item.HashedPassword;
+            var storageHashedPasswod = result.Item.Password;
 
             // Split the salt from "HashedPassword" column in database"
             var salt = SplitSaltFromPasswordCol(storageHashedPasswod);

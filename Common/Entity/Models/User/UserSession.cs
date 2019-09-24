@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace Common.Entity.Models.User
 {
-    public class User
+    public class UserSession
     {
-        public int Id { get; set; }
         public string UserName { get; set; }
-        public int PhoneNumber { get; set; }
+        public string Token { get; set; }
         public bool IsAdmin { get; set; }
         public string Title { get; set; }
+        public bool IsUserLoggedIn => string.IsNullOrEmpty(Token) ? false : true;
     }
 }

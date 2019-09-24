@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ComputerRoomManagementUTC.Helper;
+using ComputerRoomManagementUTC.Helper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,7 +49,10 @@ namespace ComputerRoomManagementUTC
                     };
 
                 });
-
+            services.AddSession();
+            services.AddHttpContextAccessor();
+            services.AddSingleton<UserSessionHelper>();
+            services.AddDistributedMemoryCache();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -65,6 +70,7 @@ namespace ComputerRoomManagementUTC
                 app.UseHsts();
             }
 
+            app.UseSession();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

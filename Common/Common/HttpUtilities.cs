@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Common.Common
 {
-    public class HttpUtilities
+    public static class HttpUtilities
     {
         public static async Task<T> GetAsyncApi<T>(string url, string token = null) where T : new()
         {

@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Common.Common
 {
-    public class ReturnResult<T>
+    public class ReturnResult<T> where T : new()
     {
         public string ErrorMessage { get; set; }
         public string ErrorCode { get; set; }
-        public T Item { get; set; }
-        public List<T> ItemList { get; set; }
+        public T Item { get; set; } = new T();
+        public List<T> ItemList { get; set; } = new List<T>();
         public bool HasData
         {
             get
