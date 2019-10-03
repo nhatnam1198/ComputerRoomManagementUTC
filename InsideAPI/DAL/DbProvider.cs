@@ -149,6 +149,13 @@ namespace InsideAPI.DAL
             return this;
         }
 
+        public DbProvider ExcuteNonQuery()
+        {
+            _db.Command.ExecuteNonQuery();
+            
+            return this;
+        }
+
         public DbProvider GetList<T>(out List<T> genericList) where T : new()
         {
             genericList = new List<T>();
