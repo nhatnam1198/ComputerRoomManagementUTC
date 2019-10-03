@@ -1,4 +1,5 @@
-﻿using Common.Common;
+﻿using System;
+using Common.Common;
 using Common.Entity.Models.RAM;
 using InsideAPI.DAL;
 
@@ -25,6 +26,11 @@ namespace InsideAPI.BUS
         public ReturnResult<RAM> GetAll()
         {
             return RamDAL.GetAll();
+        }
+
+        public ReturnResult<RAM> AddRam(RAM ram)
+        {
+            return RamDAL.Add(ram);
         }
     }
 }

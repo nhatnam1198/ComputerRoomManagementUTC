@@ -17,10 +17,6 @@ namespace ComputerRoomManagement.Controllers
         {
             _userSessionHelper = userSessionHelper;
         }
-        //public IActionResult Index()
-        //{
-        //    //return View("Login");
-        //}
 
         [HttpPost]
         public async Task<ActionResult> Login(Login login)
@@ -29,7 +25,7 @@ namespace ComputerRoomManagement.Controllers
             string errorMessage = string.Empty;
             var result = await HttpUtilities.PostAsyncApi<ReturnResult<LoginResult>>("https://localhost:44356/api/Account/Login", JsonConvert.SerializeObject(login));
             var jwtToken = result.Item.token;
-            if(jwtToken == null)
+            if(string.IsNullOrEmpty(jwtToken))
             {
                 errorCode = 1;
                 errorMessage = "Incorrect username or password";

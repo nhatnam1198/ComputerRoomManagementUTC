@@ -1,9 +1,3 @@
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.csprojAssemblyReference.cache
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.csproj.CoreCompileInputs.cache
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.RazorAssemblyInfo.cache
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.RazorAssemblyInfo.cs
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.AssemblyInfoInputs.cache
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.AssemblyInfo.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\bin\Debug\netcoreapp2.2\ComputerRoomManagementUTC.Views.dll
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\bin\Debug\netcoreapp2.2\ComputerRoomManagementUTC.Views.pdb
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\bin\Debug\netcoreapp2.2\InsideAPI.deps.json
@@ -15,6 +9,12 @@ C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\bin\Debug\net
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\bin\Debug\netcoreapp2.2\ComputerRoomManagementUTC.dll
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\bin\Debug\netcoreapp2.2\Common.pdb
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\bin\Debug\netcoreapp2.2\ComputerRoomManagementUTC.pdb
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.RazorAssemblyInfo.cache
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.RazorAssemblyInfo.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.AssemblyInfo.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.RazorTargetAssemblyInfo.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.csproj.CopyComplete
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\InsideAPI\obj\Debug\netcoreapp2.2\InsideAPI.dll

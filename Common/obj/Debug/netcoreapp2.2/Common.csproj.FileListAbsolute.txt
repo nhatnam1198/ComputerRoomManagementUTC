@@ -1,9 +1,9 @@
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\bin\Debug\netcoreapp2.2\Common.deps.json
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\bin\Debug\netcoreapp2.2\Common.dll
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\bin\Debug\netcoreapp2.2\Common.pdb
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\obj\Debug\netcoreapp2.2\Common.csprojAssemblyReference.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\obj\Debug\netcoreapp2.2\Common.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\obj\Debug\netcoreapp2.2\Common.AssemblyInfoInputs.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\obj\Debug\netcoreapp2.2\Common.AssemblyInfo.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\obj\Debug\netcoreapp2.2\Common.dll
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\obj\Debug\netcoreapp2.2\Common.pdb
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\Common\obj\Debug\netcoreapp2.2\Common.csprojAssemblyReference.cache

@@ -9,6 +9,6 @@ namespace Common.Entity.Models.RAM
     {
         public int PK_Id { get; set; }
         public string Name { get; set; }
-        public bool IsActivated { get; set; }
+        public int Status { get; set; }
     }
 }

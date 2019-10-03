@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
-    <title>Examples &rsaquo; Login &mdash; Stisla</title>
+    <title>Examples &rsaquo; Login &mdash; HASAGI DZO</title>
 
     <link rel="stylesheet" href="~/modules/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/modules/ionicons/css/ionicons.min.css">
@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="login-brand">
-                            Stisla
+                            HASAGI DZO
                         </div>
 
                         <div class="card card-primary">
@@ -55,6 +55,8 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <div id="loginError" class="error" tabindex="3" style="color:red"></div>
+                                        <br />
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
                                             <label class="custom-control-label" for="remember-me">Remember Me</label>
@@ -72,7 +74,6 @@
                         <div class="mt-5 text-muted text-center">
                             Don't have an account? <a href="register.html">Create One</a>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -94,29 +95,30 @@
     <script>
         $(document).ready(function () {
 
-            $("#loginForm").submit(function (event) {
-                event.preventDefault;
-                $("input[type='submit']", this)
-                .val("Please Wait...")
-                .attr('disabled', 'disabled');
-
-                var file = new FormData();
+            $("#loginForm").on('submit', function (event) {
+                event.preventDefault();
+                $("#loginBtn").attr("disabled", true);
                 $.ajax({
                     url: '@Url.Action("Login", "Account")',
                     data: $("#loginForm").serialize(),
                     type: 'POST',
-                    beforeSend: function () {
-                        console.log($("#loginForm").serialize());
-                        $("#loginBtn").prop("disable", true);
-                    },
+
                     success: function (respone) {
-                        $("#loginBtn").prop("disable", true);
-                        window.location.href = '@Url.Action("Home", "Index")';
                         console.log(respone);
-                        console.log(respone.ErrorMessage);
+                        if (respone.errorCode === 0) {
+                            window.location.href = '@Url.Action("Home", "Index")';
+                            console.log(respone);
+                            console.log(respone.errorMessage);
+                        } else {
+                            $("#loginError").text(respone.errorMessage);
+                        }
+                        
                     },
                     error: function (error) {
                         console.log(error);
+                    },
+                    complete: function () {
+                        
                     }
                 })
             })

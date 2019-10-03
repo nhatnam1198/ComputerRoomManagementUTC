@@ -1,5 +1,6 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,38 +27,6 @@
     <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
-    @*<header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ComputerRoomManagementUTC</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div class="container">
-            <partial name="_CookieConsentPartial" />
-            <main role="main" class="pb-3">*@
-    @*</main>
-        </div>
-
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2019 - ComputerRoomManagementUTC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </footer>*@
 
     <div id="app">
         <div class="main-wrapper">
@@ -125,7 +94,7 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
                             <i class="ion ion-android-person d-lg-none"></i>
-                            <div class="d-sm-none d-lg-inline-block">Hi, </div>
+                            <div class="d-sm-none d-lg-inline-block">Hi, @Context.Session.GetString("UserName")</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="profile.html" class="dropdown-item has-icon">
@@ -141,14 +110,14 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html">Stisla Lite</a>
+                        <a href="@Url.Action("Index", "Home")">Stisla Lite</a>
                     </div>
                     <div class="sidebar-user">
                         <div class="sidebar-user-picture">
                             <img alt="image" src="~/img/avatar/avatar-1.jpeg">
                         </div>
                         <div class="sidebar-user-details">
-                            <div class="user-name">Ujang Maman</div>
+                            <div class="user-name">@Context.Session.GetString("UserName")</div>
                             <div class="user-role">
                                 Administrator
                             </div>
@@ -160,14 +129,25 @@
                             <a href="index.html"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
                         </li>
 
-                        <li class="menu-header">Components</li>
+                        <li class="menu-header">Management</li>
                         <li>
-                            <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Components</span></a>
+                            <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Room Facilities</span></a>
                             <ul class="menu-dropdown">
-                                <li><a href="general.html"><i class="ion ion-ios-circle-outline"></i> Basic</a></li>
-                                <li><a href="components.html"><i class="ion ion-ios-circle-outline"></i> Main Components</a></li>
-                                <li><a href="buttons.html"><i class="ion ion-ios-circle-outline"></i> Buttons</a></li>
-                                <li><a href="toastr.html"><i class="ion ion-ios-circle-outline"></i> Toastr</a></li>
+                                <li><a href="@Url.Action("Index", "Computer", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Computers</a></li>
+                                <li>
+                                    <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i>Manage Components</a>
+                                    <ul class="menu-dropdown">
+                                        <li><a href="@Url.Action("RamPaging", "Ram", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i> RAM</a></li>
+                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> CPU</a></li>
+                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Monitor</a></li>
+                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Monitor Size</a></li>
+                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Speed</a></li>
+                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Mouse</a></li>
+                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Storage Device</a></li>
+                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Storage Device Capacity</a></li>
+                                    </ul>
+                                </li>
+                                
                             </ul>
                         </li>
                         <li>
@@ -208,14 +188,14 @@
                                     <ul class="menu-dropdown">
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                                        <li>
+                                        @*<li>
                                             <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a>
                                             <ul class="menu-dropdown">
                                                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
                                                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
                                                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a></li>
                                             </ul>
-                                        </li>
+                                        </li>*@
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 4</a></li>
                                     </ul>
                                 </li>
@@ -228,11 +208,7 @@
                             <a href="credits.html"><i class="ion ion-ios-information-outline"></i> Credits</a>
                         </li>
                     </ul>
-                    <div class="p-3 mt-4 mb-4">
-                        <a href="http://stisla.multinity.com/" class="btn btn-danger btn-shadow btn-round has-icon has-icon-nofloat btn-block">
-                            <i class="ion ion-help-buoy"></i> <div>Go PRO!</div>
-                        </a>
-                    </div>
+                    
                 </aside>
             </div>
             @RenderBody()

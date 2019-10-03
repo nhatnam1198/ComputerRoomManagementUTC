@@ -20,9 +20,12 @@ namespace InsideAPI.DAL
             string outMessage = String.Empty;
             int totalRows = 0;
             StoredProcedureConfigs<RAM> storedProcedureConfigs = new StoredProcedureConfigs<RAM>();
-            dbProvider.SetQuery(storedProcedureConfigs._GET_PAGING_STORED_PROCEDURE, System.Data.CommandType.StoredProcedure)
-                .SetParameter("FROM_RECORD", System.Data.SqlDbType.Int, condition.FROM_RECORD, System.Data.ParameterDirection.Input)
-                .SetParameter("PAGE_SIZE", System.Data.SqlDbType.Int, condition.FROM_RECORD, System.Data.ParameterDirection.Input)
+            dbProvider.SetQuery(storedProcedureConfigs._GET_PAGING_STORED_PROCEDURE, CommandType.StoredProcedure)
+                .SetParameter("FROM_RECORD", SqlDbType.Int, condition.FROM_RECORD, ParameterDirection.Input)
+                .SetParameter("PAGE_SIZE", SqlDbType.Int, condition.PAGE_SIZE, ParameterDirection.Input)
+                .SetParameter("ERROR_CODE", SqlDbType.NVarChar, DBNull.Value, 100, ParameterDirection.Output)
+                .SetParameter("ERROR_MESSAGE", SqlDbType.NVarChar, DBNull.Value, 4000, ParameterDirection.Output)
+                .SetParameter("OUT_TOTAL_ROWS", SqlDbType.Int, DBNull.Value, ParameterDirection.Output)
                 .GetList<RAM>(out ramList)
                 .Complete();
             dbProvider.GetOutValue("ERROR_CODE", out outCode)
@@ -34,6 +37,28 @@ namespace InsideAPI.DAL
                 ErrorCode = outCode,
                 ErrorMessage = outMessage,
                 TotalRows = totalRows
+            };
+        }
+
+        public ReturnResult<RAM> Add(RAM ram)
+        {
+            DbProvider dbProvider = new DbProvider();
+            string outCode = String.Empty;
+            string outMessage = String.Empty;
+            StoredProcedureConfigs<RAM> storedProcedureConfigs = new StoredProcedureConfigs<RAM>();
+            dbProvider.SetQuery(storedProcedureConfigs._INSERT_SINGLE_STORED_PROCEDURE, CommandType.StoredProcedure)
+                .SetParameter("Name", SqlDbType.NVarChar, ram.Name, ParameterDirection.Input)
+                .SetParameter("Status", SqlDbType.NVarChar, ram.Status, ParameterDirection.Input)
+                .SetParameter("ERROR_CODE", System.Data.SqlDbType.NVarChar, DBNull.Value, 100, ParameterDirection.Output)
+                .SetParameter("ERROR_MESSAGE", System.Data.SqlDbType.NVarChar, DBNull.Value, 400, ParameterDirection.Output)
+                .ExcuteNonQuery()
+                .Complete();
+            dbProvider.GetOutValue("ERROR_CODE", out outCode)
+                       .GetOutValue("ERROR_MESSAGE", out outMessage);
+            return new ReturnResult<RAM>()
+            {
+                ErrorCode = outCode,
+                ErrorMessage = outMessage,
             };
         }
 

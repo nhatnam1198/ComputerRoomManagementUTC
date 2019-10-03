@@ -67,6 +67,5 @@ namespace Common.Common
                 }
             }
         }
-
     }
 }

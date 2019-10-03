@@ -5,6 +5,8 @@ C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementU
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\ComputerRoomManagementUTC.pdb
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\ComputerRoomManagementUTC.Views.dll
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\ComputerRoomManagementUTC.Views.pdb
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\Common.dll
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\Common.pdb
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.csprojAssemblyReference.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.RazorAssemblyInfo.cache
@@ -14,6 +16,9 @@ C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementU
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.TagHelpers.input.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.TagHelpers.output.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.RazorCoreGenerate.cache
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Account\PreLoader.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Computers.g.cshtml.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
@@ -25,10 +30,10 @@ C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementU
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.RazorTargetAssemblyInfo.cache
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.RazorTargetAssemblyInfo.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.Views.pdb
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.csproj.CopyComplete
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.dll
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.pdb
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\ComputerRoomManagementUTC.csproj.CopyComplete
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\Common.dll
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\bin\Debug\netcoreapp2.2\Common.pdb
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
-C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Account\PreLoader.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Computer\Index.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\RAM\RamPaging.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\RAM\Edit.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\RAM\Add.g.cshtml.cs

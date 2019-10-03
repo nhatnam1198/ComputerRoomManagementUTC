@@ -31,6 +31,11 @@ a {
 	color: #574B90;
 	font-weight: 500;
 }
+
+.error {
+    color: red;
+}
+
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .ion,
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fas,
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .far,
@@ -2347,6 +2352,8 @@ table tr:hover .table-links {
 	.article .article-header {
 		height: 155px;
 	}
+
+    
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
 }
