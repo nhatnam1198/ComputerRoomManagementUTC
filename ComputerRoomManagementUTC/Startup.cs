@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ComputerRoomManagementUTC.Helper;
 using ComputerRoomManagementUTC.Helper;
+using ComputerRoomManagementUTC.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -53,6 +54,7 @@ namespace ComputerRoomManagementUTC
             services.AddHttpContextAccessor();
             services.AddSingleton<UserSessionHelper>();
             services.AddDistributedMemoryCache();
+            services.AddSingleton<IAppUrlHelper, AppUrlHelper>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
