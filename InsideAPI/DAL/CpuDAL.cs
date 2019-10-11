@@ -1,16 +1,11 @@
-﻿
-using Common.Common;
-using Common.Entity.Models.RAM;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace InsideAPI.DAL
 {
-    public class RamDAL
+    public class CpuDAL
     {
         public ReturnResult<RAM> GetAllRamSearched(BaseCondition<RAM> condition)
         {

@@ -73,7 +73,7 @@ namespace InsideAPI.DAL
                 {
                     CommandType = commandType
                 };
-            }
+           }
             _reader = null;
         }
     }
@@ -198,14 +198,6 @@ namespace InsideAPI.DAL
 
         public DbProvider Complete()
         {
-            if(_db.Connection != null)
-            {
-                _db.Connection.Close();
-            }
-            if(_db.Reader != null)
-            {
-                _db.Reader.Close();
-            }
             if (_db.Transaction != null)
             {
                 _db.Transaction.Dispose();
@@ -213,6 +205,10 @@ namespace InsideAPI.DAL
             if (_db.Command != null)
             {
                 _db.Command.Dispose();
+            }
+            if(_db.Connection != null)
+            {
+                _db.Connection.Close();
             }
             return this;
         }

@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Common.Common;
-using Common.Entity.Models.RAM;
-using InsideAPI.BUS;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +9,7 @@ namespace InsideAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class RAMController : ControllerBase
+    public class CPUController : ControllerBase
     {
         public IActionResult GetPaging(BaseCondition<RAM> condition)
         {
@@ -44,7 +41,7 @@ namespace InsideAPI.Controllers
             var result = ramBusiness.Delete(ram);
             return Ok(result);
         }
-        
+
         [HttpPost]
         public IActionResult Edit(RamEditViewModel ram)
         {

@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="~/modules/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="~/css/demo.css">
     <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
 </head>
 <body>
 
@@ -147,7 +149,7 @@
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Storage Device Capacity</a></li>
                                     </ul>
                                 </li>
-                                
+
                             </ul>
                         </li>
                         <li>
@@ -189,13 +191,13 @@
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
                                         @*<li>
-                                            <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a>
-                                            <ul class="menu-dropdown">
-                                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
-                                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a></li>
-                                            </ul>
-                                        </li>*@
+                                                <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a>
+                                                <ul class="menu-dropdown">
+                                                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
+                                                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
+                                                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a></li>
+                                                </ul>
+                                            </li>*@
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 4</a></li>
                                     </ul>
                                 </li>
@@ -208,7 +210,7 @@
                             <a href="credits.html"><i class="ion ion-ios-information-outline"></i> Credits</a>
                         </li>
                     </ul>
-                    
+
                 </aside>
             </div>
             @RenderBody()
@@ -220,6 +222,8 @@
             </footer>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <script src="~/modules/jquery.min.js"></script>
     <script src="~/modules/popper.js"></script>
     <script src="~/modules/tooltip.js"></script>
@@ -240,25 +244,25 @@
     <script src="~/js/demo.js"></script>
 
     @*<environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
-        </script>
-    </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/modules/chart.min.js"></script>
-    <script src="~/modules/summernote/summernote-lite.js"></script>*@
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+            </script>
+        </environment>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/modules/chart.min.js"></script>
+        <script src="~/modules/summernote/summernote-lite.js"></script>*@
 </body>
 </html>

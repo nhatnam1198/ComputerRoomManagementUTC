@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Common.Entity.Models.RAM
+namespace Common.Entity.Models.CPU
 {
-    public class RamEditViewModel
+    public class CpuEditViewModel
     {
         public int Pk_id { get; set; }
         public string Name { get; set; }

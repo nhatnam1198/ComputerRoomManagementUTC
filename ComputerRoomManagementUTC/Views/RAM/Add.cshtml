@@ -31,6 +31,7 @@
                                                 </select>
                                                 <span target="Status" class="error"></span>
                                             </div>
+                                            <span target="ErrorMessage" class="error"></span>
                                             <div class="form-group">
                                                 <button id="submit-btn" type="submit" class="btn btn-primary btn-block " tabindex="3">
                                                     Submit
@@ -53,7 +54,7 @@
     </section>
 </div>
 @section Scripts{
-   <script>
+    <script>
        $(document).ready(function () {
             $("#add-form").on('submit', function (event) {
                 event.preventDefault();
@@ -64,13 +65,20 @@
                         data: $("#add-form").serialize(),
                         type: 'POST',
                         success: function (respone) {
-                            console.log(respone);
+                            if (respone.errorCode != 0) {
+                                $('span[target="ErrorMessage"]').text(respone.errorMessage);
+                            } else {
+                                $('span[target="ErrorMessage"]').text("Add RAM successfully");
+                                setTimeout(function () {
+                                    window.location.href = '@Html.Raw(@Url.Action("RamPaging", "Ram", new { PAGE_SIZE = 10, PAGE_INDEX = 1 }))';
+                                }, 1000)
+                            }
                         },
                         error: function (error) {
                             console.log(error);
                         },
                         complete: function () {
-                            
+
                         }
                     })
                 }

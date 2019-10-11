@@ -1,11 +1,11 @@
 ﻿using System;
-using Common.Common;
-using Common.Entity.Models.RAM;
-using InsideAPI.DAL;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace InsideAPI.BUS
 {
-    public class RamBusiness
+    public class CPUBusiness
     {
         private RamDAL _ramDAL;
         public RamDAL RamDAL
