@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Common.Common;
+using Common.Entity.Models.CPU;
+using InsideAPI.BUS;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,17 +14,24 @@ namespace InsideAPI.Controllers
     [ApiController]
     public class CPUController : ControllerBase
     {
-        public IActionResult GetPaging(BaseCondition<RAM> condition)
+        public IActionResult GetPaging(BaseCondition<CPU> condition)
         {
-            RamBusiness ramBusiness = new RamBusiness();
-            var result = ramBusiness.GetAllRamSearched(condition);
+            CPUBusiness ramBusiness = new CPUBusiness();
+            var result = ramBusiness.GetAllCpuSearched(condition);
             return Ok(result);
         }
 
-        public IActionResult Add(AddRamViewModel ram)
+        [HttpGet]
+        public IActionResult GetAll()
         {
-            RamBusiness ramBusiness = new RamBusiness();
-            var result = ramBusiness.AddRam(ram);
+            CPUBusiness cpuBusiness = new CPUBusiness();
+            var result = cpuBusiness.GetAll();
+            return Ok(result);
+        }
+        public IActionResult Add(AddCpuViewModel ram)
+        {
+            CPUBusiness ramBusiness = new CPUBusiness();
+            var result = ramBusiness.AddCpu(ram);
             return Ok(result);
         }
 
@@ -29,31 +39,31 @@ namespace InsideAPI.Controllers
         [Route("{Id}")]
         public IActionResult GetById(int Id)
         {
-            RamBusiness ramBusiness = new RamBusiness();
+            CPUBusiness ramBusiness = new CPUBusiness();
             var result = ramBusiness.GetById(Id);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Delete(RamDeleteViewModel ram)
+        public IActionResult Delete(CpuDeleteViewModel ram)
         {
-            RamBusiness ramBusiness = new RamBusiness();
+            CPUBusiness ramBusiness = new CPUBusiness();
             var result = ramBusiness.Delete(ram);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Edit(RamEditViewModel ram)
+        public IActionResult Edit(CpuEditViewModel ram)
         {
-            RamBusiness ramBusiness = new RamBusiness();
+            CPUBusiness ramBusiness = new CPUBusiness();
             var result = ramBusiness.Edit(ram);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult EditStatus(RamEditStatusViewModel ram)
+        public IActionResult EditStatus(CpuEditStatusViewModel ram)
         {
-            RamBusiness ramBusiness = new RamBusiness();
+            CPUBusiness ramBusiness = new CPUBusiness();
             var result = ramBusiness.EditStatus(ram);
             return Ok(result);
         }

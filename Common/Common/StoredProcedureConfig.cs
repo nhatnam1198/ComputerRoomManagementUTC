@@ -16,7 +16,7 @@ namespace Common.Common
         private const string _get_single_stored_procedure = "_get_single_stored_procedure";
         private const string _get_paging_stored_procedure = "_get_paging_stored_procedure";
         private const string _get_all_stored_procedure = "_get_all_stored_procedure";
-        
+
 
         public string _INSERT_SINGLE_STORED_PROCEDURE
         {
@@ -119,6 +119,49 @@ namespace Common.Common
         }
 
         #region INSERT
+        private string _insert_single_stored_procedure_Province
+        {
+            get
+            {
+                return "[dbo].[PROVINCE_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_Computer
+        {
+            get
+            {
+                return "[dbo].[COMPUTER_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_ComputerRoom
+        {
+            get
+            {
+                return "[dbo].[COMPUTER_ROOM_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_OpticalDisc
+        {
+            get
+            {
+                return "[dbo].[OPTICAL_DISC_INSERT]";
+            }
+        }
+
+        private string _insert_single_stored_procedure_StorageCapacity
+        {
+            get
+            {
+                return "[dbo].[STORAGE_CAPACITY_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_StorageDevice
+        {
+            get
+            {
+                return "[dbo].[STORAGE_DEVICE_INSERT]";
+            }
+        }
         private string _insert_single_stored_procedure_RAM
         {
             get
@@ -126,9 +169,91 @@ namespace Common.Common
                 return "[dbo].[RAM_INSERT]";
             }
         }
+
+        private string _insert_single_stored_procedure_Keyboard
+        {
+            get
+            {
+                return "[dbo].[KEYBOARD_INSERT]";
+            }
+        }
+
+        private string _insert_single_stored_procedure_CPU
+        {
+            get
+            {
+                return "[dbo].[CPU_INSERT]";
+            }
+        }
+
+        private string _insert_single_stored_procedure_Monitor
+        {
+            get
+            {
+                return "[dbo].[MONITOR_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_MonitorSize
+        {
+            get
+            {
+                return "[dbo].[MONITOR_SIZE_INSERT]";
+            }
+        }
+
+        private string _insert_single_stored_procedure_Speed
+        {
+            get
+            {
+                return "[dbo].[SPEED_INSERT]";
+            }
+        }
+
+        private string _insert_single_stored_procedure_Mouse
+        {
+            get
+            {
+                return "[dbo].[MOUSE_INSERT]";
+            }
+        }
         #endregion
 
         #region UPDATE
+        private string _update_single_stored_procedure_Province
+        {
+            get
+            {
+                return "[dbo].[PROVINCE_EDIT]";
+            }
+        }
+        private string _update_single_stored_procedure_Computer
+        {
+            get
+            {
+                return "[dbo].[COMPUTER_EDIT]";
+            }
+        }
+        private string _update_single_stored_procedure_OpticalDisc
+        {
+            get
+            {
+                return "[dbo].[OPTICAL_DISC_EDIT]";
+            }
+        }
+        private string _update_single_stored_procedure_StorageCapacity
+        {
+            get
+            {
+                return "[dbo].[STORAGE_CAPACITY_EDIT]";
+            }
+        }
+        private string _update_single_stored_procedure_StorageDevice
+        {
+            get
+            {
+                return "[dbo].[STORAGE_DEVICE_EDIT]";
+            }
+        }
         private string _update_single_stored_procedure_RAM
         {
             get
@@ -136,9 +261,92 @@ namespace Common.Common
                 return "[dbo].[RAM_EDIT]";
             }
         }
+
+        private string _update_single_stored_procedure_Keyboard
+        {
+            get
+            {
+                return "[dbo].[KEYBOARD_EDIT]";
+            }
+        }
+
+        private string _update_single_stored_procedure_Mouse
+        {
+            get
+            {
+                return "[dbo].[MOUSE_EDIT]";
+            }
+        }
+
+        private string _update_single_stored_procedure_CPU
+        {
+            get
+            {
+                return "[dbo].[CPU_EDIT]";
+            }
+        }
+
+        private string _update_single_stored_procedure_Monitor
+        {
+            get
+            {
+                return "[dbo].[MONITOR_EDIT]";
+            }
+        }
+
+        private string _update_single_stored_procedure_MonitorSize
+        {
+            get
+            {
+                return "[dbo].[MoNITOR_SIZE_EDIT]";
+            }
+        }
+
+        private string _update_single_stored_procedure_Speed
+        {
+            get
+            {
+                return "[dbo].[SPEED_EDIT]";
+            }
+        }
         #endregion
 
         #region DELETE
+        private string _delete_single_stored_procedure_Province
+        {
+            get
+            {
+                return "[dbo].[PROVINCE_ROOM_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_ComputerRoom
+        {
+            get
+            {
+                return "[dbo].[COMPUTER_ROOM_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_OpticalDisc
+        {
+            get
+            {
+                return "[dbo].[OPTICAL_DISC_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_StorageCapacity
+        {
+            get
+            {
+                return "[dbo].[STORAGE_CAPACITY_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_StorageDevice
+        {
+            get
+            {
+                return "[dbo].[STORAGE_DEVICE_DELETE]";
+            }
+        }
         private string _delete_single_stored_procedure_RAM
         {
             get
@@ -146,9 +354,90 @@ namespace Common.Common
                 return "[dbo].[RAM_DELETE]";
             }
         }
+
+        private string _delete_single_stored_procedure_Keyboard
+        {
+            get
+            {
+                return "[dbo].[KEYBOARD_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_Mouse
+        {
+            get
+            {
+                return "[dbo].[MOUSE_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_CPU
+        {
+            get
+            {
+                return "[dbo].[CPU_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_Monitor
+        {
+            get
+            {
+                return "[dbo].[MONITOR_DELETE]";
+            }
+        }
+
+        private string _delete_single_stored_procedure_MonitorSize
+        {
+            get
+            {
+                return "[dbo].[MONITOR_SIZE_DELETE]";
+            }
+        }
+
+        private string _delete_single_stored_procedure_Speed
+        {
+            get
+            {
+                return "[dbo].[SPEED_DELETE]";
+            }
+        }
         #endregion
 
         #region GETPAGING
+        private string _get_paging_stored_procedure_Province
+        {
+            get
+            {
+                return "[dbo].[PROVINCE_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_ComputerRoom
+        {
+            get
+            {
+                return "[dbo].[COMPUTER_ROOM_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_OpticalDisc
+        {
+            get
+            {
+                return "[dbo].[OPTICAL_DISC_GET_PAGING]";
+            }
+        }
+
+        private string _get_paging_stored_procedure_StorageCapacity
+        {
+            get
+            {
+                return "[dbo].[STORAGE_CAPACITY_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_StorageDevice
+        {
+            get
+            {
+                return "[dbo].[STORAGE_DEVICE_GET_PAGING]";
+            }
+        }
         private string _get_paging_stored_procedure_RAM
         {
             get
@@ -156,9 +445,113 @@ namespace Common.Common
                 return "[dbo].[RAM_GET_PAGING]";
             }
         }
+
+        private string _get_paging_stored_procedure_Keyboard
+        {
+            get
+            {
+                return "[dbo].[KEYBOARD_GET_PAGING]";
+            }
+        }
+
+        private string _get_paging_stored_procedure_Mouse
+        {
+            get
+            {
+                return "[dbo].[MOUSE_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_CPU
+        {
+            get
+            {
+                return "[dbo].[CPU_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_Monitor
+        {
+            get
+            {
+                return "[dbo].[MONITOR_GET_PAGING]";
+            }
+        }
+
+        private string _get_paging_stored_procedure_MonitorSize
+        {
+            get
+            {
+                return "[dbo].[MONITOR_SIZE_GET_PAGING]";
+            }
+        }
+
+        private string _get_paging_stored_procedure_Speed
+        {
+            get
+            {
+                return "[dbo].[SPEED_GET_PAGING]";
+            }
+        }
         #endregion
 
         #region GETSINGLE
+        private string _get_single_stored_procedure_Province
+        {
+            get
+            {
+                return "[dbo].[PROVINCE_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_Computer
+        {
+            get
+            {
+                return "[dbo].[COMPUTER_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_OpticalDisc
+        {
+            get
+            {
+                return "[dbo].[OPTICAL_DISC_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_StorageCapacity
+        {
+            get
+            {
+                return "[dbo].[STORAGE_CAPACITY_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_StorageDevice
+        {
+            get
+            {
+                return "[dbo].[STORAGE_DEVICE_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_CPU
+        {
+            get
+            {
+                return "[dbo].[CPU_GET_BY_ID]";
+            }
+        }
+
+        private string _get_single_stored_procedure_Keyboard
+        {
+            get
+            {
+                return "[dbo].[KEYBOARD_GET_BY_ID]";
+            }
+        }
+
+        private string _get_single_stored_procedure_Mouse
+        {
+            get
+            {
+                return "[dbo].[MOUSE_GET_BY_ID]";
+            }
+        }
         private string _get_single_stored_procedure_RAM
         {
             get
@@ -166,9 +559,39 @@ namespace Common.Common
                 return "[dbo].[RAM_GET_BY_ID]";
             }
         }
+
+        private string _get_single_stored_procedure_MonitorSize
+        {
+            get
+            {
+                return "[dbo].[MONITOR_SIZE_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_Monitor
+        {
+            get
+            {
+                return "[dbo].[MONITOR_GET_BY_ID]";
+            }
+        }
+
+        private string _get_single_stored_procedure_Speed
+        {
+            get
+            {
+                return "[dbo].[SPEED_GET_BY_ID]";
+            }
+        }
         #endregion
 
         #region GETALL
+        private string _get_all_stored_procedure_Province
+        {
+            get
+            {
+                return "[dbo].[PROVINCE_GET_ALL]";
+            }
+        }
         private string _get_all_stored_procedure_RAM
         {
             get
@@ -176,14 +599,159 @@ namespace Common.Common
                 return "[dbo].[RAM_GET_ALL]";
             }
         }
+        private string _get_all_stored_procedure_CPU
+        {
+            get
+            {
+                return "[dbo].[CPU_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_Keyboard
+        {
+            get
+            {
+                return "[dbo].[KEYBOARD_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_Mouse
+        {
+            get
+            {
+                return "[dbo].[MOUSE_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_Monitor
+        {
+            get
+            {
+                return "[dbo].[MONITOR_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_MonitorSize
+        {
+            get
+            {
+                return "[dbo].[MONITOR_SIZE_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_Speed
+        {
+            get
+            {
+                return "[dbo].[SPEED_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_OpticalDisc
+        {
+            get
+            {
+                return "[dbo].[OPTICAL_DISC_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_StorageCapacity
+        {
+            get
+            {
+                return "[dbo].[STORAGE_CAPACITY_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_StorageDevice
+        {
+            get
+            {
+                return "[dbo].[STORAGE_DEVICE_GET_ALL]";
+            }
+        }
+
         #endregion
 
         #region UPDATESTATUS
+        private string _update_status_stored_procedure_Province
+        {
+            get
+            {
+                return "[dbo].[PROVINCE_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_ComputerRoom
+        {
+            get
+            {
+                return "[dbo].[COMPUTER_ROOM_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_OpticalDisc
+        {
+            get
+            {
+                return "[dbo].[OPTICAL_DISC_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_StorageCapacity
+        {
+            get
+            {
+                return "[dbo].[STORAGE_CAPACITY_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_StorageDevice
+        {
+            get
+            {
+                return "[dbo].[STORAGE_DEVICE_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_Keyboard
+        {
+            get
+            {
+                return "[dbo].[KEYBOARD_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_CPU
+        {
+            get
+            {
+                return "[dbo].[CPU_UPDATE_STATUS]";
+            }
+        }
         private string _update_status_stored_procedure_RAM
         {
             get
             {
                 return "[dbo].[RAM_UPDATE_STATUS]";
+            }
+        }
+
+        private string _update_status_stored_procedure_Mouse
+        {
+            get
+            {
+                return "[dbo].[MOUSE_UPDATE_STATUS]";
+            }
+        }
+
+        private string _update_status_stored_procedure_Monitor
+        {
+            get
+            {
+                return "[dbo].[MONITOR_UPDATE_STATUS]";
+            }
+        }
+
+        private string _update_status_stored_procedure_MonitorSize
+        {
+            get
+            {
+                return "[dbo].[MONITOR_SIZE_UPDATE_STATUS]";
+            }
+        }
+
+        private string _update_status_stored_procedure_Speed
+        {
+            get
+            {
+                return "[dbo].[SPEED_UPDATE_STATUS]";
             }
         }
         #endregion

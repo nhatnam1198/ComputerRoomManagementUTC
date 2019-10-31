@@ -11,5 +11,6 @@ namespace Common.Common
         public int FROM_RECORD => PAGE_SIZE * (PAGE_INDEX - 1);
         public string IN_WHERE { get; set; }
         public string IN_SORT { get; set; }
+        T Item { get; set; }
     }
 }

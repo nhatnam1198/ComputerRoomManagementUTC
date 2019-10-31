@@ -21,6 +21,14 @@ namespace InsideAPI.Controllers
             return Ok(result);
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            RamBusiness ramBusiness = new RamBusiness();
+            var result = ramBusiness.GetAll();
+            return Ok(result);
+        }
+
         public IActionResult Add(AddRamViewModel ram)
         {
             RamBusiness ramBusiness = new RamBusiness();

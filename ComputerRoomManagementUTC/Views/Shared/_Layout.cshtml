@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 
+
+    <!--Selection2 section-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.11/dist/css/select2.min.css">
+    
+
 </head>
 <body>
 
@@ -135,18 +140,20 @@
                         <li>
                             <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Room Facilities</span></a>
                             <ul class="menu-dropdown">
-                                <li><a href="@Url.Action("Index", "Computer", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Computers</a></li>
+                                <li><a href="@Url.Action("ComputerRoomPaging", "ComputerRoom", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Computer Rooms</a></li>
                                 <li>
                                     <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i>Manage Components</a>
                                     <ul class="menu-dropdown">
                                         <li><a href="@Url.Action("RamPaging", "Ram", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i> RAM</a></li>
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> CPU</a></li>
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Monitor</a></li>
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Monitor Size</a></li>
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Speed</a></li>
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Mouse</a></li>
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Storage Device</a></li>
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Storage Device Capacity</a></li>
+                                        <li><a href="@Url.Action("CpuPaging", "Cpu", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i> CPU</a></li>
+                                        <li><a href="@Url.Action("MonitorPaging", "Monitor", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i> Monitor</a></li>
+                                        <li><a href="@Url.Action("MonitorSizePaging", "MonitorSize", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i> Monitor Size</a></li>
+                                        <li><a href="@Url.Action("SpeedPaging", "Speed", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Speed</a></li>
+                                        <li><a href="@Url.Action("MousePaging", "Mouse", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Mouse</a></li>
+                                        <li><a href="@Url.Action("KeyboardPaging", "Keyboard", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Keyboard</a></li>
+                                        <li><a href="@Url.Action("StorageDevicePaging", "StorageDevice", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Storage Device</a></li>
+                                        <li><a href="@Url.Action("StorageCapacityPaging", "StorageCapacity", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Storage Device Capacity</a></li>
+                                        <li><a href="@Url.Action("OpticalDiscPaging", "OpticalDisc", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Optical Disc</a></li>
                                     </ul>
                                 </li>
 
@@ -223,7 +230,7 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
     <script src="~/modules/jquery.min.js"></script>
     <script src="~/modules/popper.js"></script>
     <script src="~/modules/tooltip.js"></script>
@@ -232,17 +239,19 @@
     <script src="~/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
     <script src="~/js/sa-functions.js"></script>
 
+
+
     <script src="~/modules/chart.min.js"></script>
     <script src="~/modules/summernote/summernote-lite.js"></script>
-    <script>
-
-    </script>
     @RenderSection("Scripts", false)
 
     <script src="~/js/scripts.js"></script>
     <script src="~/js/custom.js"></script>
     <script src="~/js/demo.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.11/dist/js/select2.min.js"></script>
+    <script src="~/lib/masterData.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
     @*<environment include="Development">
             <script src="~/lib/jquery/dist/jquery.js"></script>
             <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>

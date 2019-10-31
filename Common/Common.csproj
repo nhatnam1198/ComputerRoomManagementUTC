@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -6,6 +6,11 @@
 
   <ItemGroup>
     <Folder Include="Base\" />
+    <Folder Include="Entity\Models\MonitorSize\" />
+    <Folder Include="Entity\Models\Subject\" />
+    <Folder Include="Entity\Models\Shift\" />
+    <Folder Include="Entity\Models\Province\" />
+    <Folder Include="Entity\Models\Class\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -167,8 +167,15 @@ namespace InsideAPI.DAL
                     var obj = new T();
                     foreach (var prop in obj.GetType().GetProperties())
                     {
-                        var value = CheckCurrentReaderValue(commandReader[prop.Name]);
-                        prop.SetValue(obj, value);
+                        try
+                        {
+                            var value = CheckCurrentReaderValue(commandReader[prop.Name]);
+                            prop.SetValue(obj, value);
+                        }
+                        catch(Exception ex)
+                        {
+                            prop.SetValue(obj, null);
+                        }
                     }
                     genericList.Add(obj);
                 }

@@ -36,6 +36,13 @@ namespace InsideApi.Controllers
             return View(result);
         }
 
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.RAM_GET_ALL);
+            var result = await HttpUtilities.GetAsyncApi<ReturnResult<RAM>>(apiUrl);
+            return Json(result);
+        }
         /// <summary>
         /// Display add form view
         /// </summary>

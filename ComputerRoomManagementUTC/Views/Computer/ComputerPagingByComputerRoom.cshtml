@@ -1,0 +1,144 @@
+﻿@model Common.Common.ReturnResult<Common.Entity.Models.Computer.Computer>
+@{
+    const int ACTIVATE = 1;
+    const int DEACTIVATE = 0;
+
+}
+<div class="main-content">
+    <section class="section">
+        <h1 class="section-header">
+            <div>Manage Computers</div>
+        </h1>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Computer List In Room @ViewBag.ComputerRoomId</h4>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ComputerName</th>
+                                        <th>Status</th>
+                                        <th>Cpu</th>
+                                        <th>Ram</th>
+                                        <th>Storage Device</th>
+                                        <th>Storage Capacity</th>
+                                        <th>Monitor</th>
+                                        <th>Monitor Size</th>
+                                        <th>Mouse</th>
+                                        <th>Keyboard</th>
+                                        <th>Optical Disc Driver</th>
+                                        <th>
+                                            Action
+                                            <br />
+                                            <button id="add-btn" class="ion-plus"></button>
+                                        </th>
+                                    </tr>
+                                    @foreach (var computer in Model.ItemList)
+                                    {
+                                <tr>
+                                    <td>@computer.PK_Id</td>
+                                    <td>@computer.ComputerName</td>
+                                    @if (@computer.Status == ACTIVATE)
+                                    {
+                                        <td><a href="javascript:void(0)" class="badge badge-success" onclick="UpdateStatus('@computer.PK_Id', '@computer.ComputerName', '@DEACTIVATE')">Active</a></td>
+                                    }
+                                    else
+                                    {
+                                        <td><a href="javascript:void(0)" class="badge badge-danger" onclick="UpdateStatus('@computer.PK_Id', '@computer.ComputerName', '@ACTIVATE')">Deactive</a></td>
+                                    }
+                                    <td>@computer.CpuName</td>
+                                    <td>@computer.RamName</td>
+                                    <td>@computer.StorageDeviceName</td>
+                                    <td>@computer.StorageCapacity</td>
+                                    <td>@computer.MonitorName</td>
+                                    <td>@computer.MonitorSize</td>
+                                    <td>@computer.MouseName</td>
+                                    <td>@computer.KeyboardName</td>
+                                    <td>@computer.OpticalDiscName</td>
+
+                                    <td>
+                                        <a href="@Url.Action("Edit", "Computer", new { computerId = computer.PK_Id })" id="edit-btn" class="ion-edit" width="50px"></a>
+                                        <a href="javascript:void(0)" id="delete-btn" onclick="Delete('@computer.PK_Id', '@computer.ComputerName')" class="ion-trash-a"></a>
+                                    </td>
+                                </tr>
+                                    }
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <nav class="d-inline-block">
+                                <ul class="pagination mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1"><i class="ion ion-chevron-left"></i></a>
+                                    </li>
+
+                                    @{
+                                        var numberOfPages = Model.TotalRows / ViewBag.PAGE_SIZE;
+                                        for (int i = 0; i <= numberOfPages; i++)
+                                        {
+                                            <li class="page-item "><a class="page-link" href="@Url.Action("ComputerPaging", "Computer", new { PAGE_INDEX = i+1, PAGE_SIZE = 10 })">@(i + 1)<span class="sr-only">(current)</span></a></li>
+                                        }
+                                    }
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><i class="ion ion-chevron-right"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+@section Scripts{
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#add-btn").click(function () {
+                window.location.href = '@Url.Action("Add", "Computer")';
+            });
+        })
+        function Delete (id, name) {
+            // Tạo thông tin xóa Computer
+            var deleteInfo = {
+                Title: 'Xác nhận xóa Computer',
+                Content: 'Bạn có muốn xóa <b>' + name + '</b> không?',
+                ConfirmButton: 'Xác nhận',
+                CancelButton: 'Hủy bỏ',
+                Id: id,
+                RequestVerificationToken: $("input[name=__RequestVerificationToken]").val(),
+                Url: '@Url.Action("Delete", "Computer")',
+                errorTitle: 'Thông báo lỗi',
+                errorContent: 'Thay đổi trạng thái thất bại'
+            };
+
+
+            // Gọi hàm common để xóa trường học
+            common.delete(deleteInfo);
+        };
+
+    function UpdateStatus(Id, ComputerName, Status) {
+            var updateStatusInfo = {
+                Title: 'Xác nhận thay đổi trạng thái Computer',
+                Content: 'Bạn có muốn thay đổi trạng thái của <b>' + ComputerName + '</b> không?',
+                ConfirmButton: 'Xác nhận',
+                CancelButton: 'Hủy bỏ',
+                Id: Id,
+                Status: Status,
+                RequestVerificationToken: $("input[name=__RequestVerificationToken]").val(),
+                Url: '@Url.Action("EditStatus", "Computer")',
+                errorTitle: 'Thông báo lỗi',
+                errorContent: 'Thay đổi trạng thái thất bại'
+            }
+            common.updateStatus(updateStatusInfo);
+        };
+    </script>
+}

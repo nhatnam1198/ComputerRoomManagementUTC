@@ -7,9 +7,13 @@
 
   <ItemGroup>
     <Compile Remove="BUS\**" />
+    <Compile Remove="wwwroot\js\i18n\**" />
     <Content Remove="BUS\**" />
+    <Content Remove="wwwroot\js\i18n\**" />
     <EmbeddedResource Remove="BUS\**" />
+    <EmbeddedResource Remove="wwwroot\js\i18n\**" />
     <None Remove="BUS\**" />
+    <None Remove="wwwroot\js\i18n\**" />
   </ItemGroup>
 
 
@@ -19,7 +23,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.Owin.Security.Jwt" Version="4.0.1" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
   </ItemGroup>
 
 
@@ -29,7 +33,9 @@
 
 
   <ItemGroup>
+    <Folder Include="Views\Province\" />
     <Folder Include="Views\PreLoader\" />
+    <Folder Include="Views\StorageCapacity\" />
   </ItemGroup>
 
 </Project>

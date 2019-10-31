@@ -22,7 +22,7 @@ var common = {
                     btnClass: 'btn-red',
                     action: function () {
 
-                        // Cập nhật trạng thái trường học
+                        // Cập nhật trạng thái 
                         var dataModel =
                         {
                             Id: info.Id,
@@ -37,8 +37,8 @@ var common = {
                             dataType: "json",
                             cache: false,
                             success: function (result) {
-                                console.log(result);
-                                if (!result.Code) {
+                                console.log(result.errorCode);
+                                if (result.errorCode == "0") {
                                     $.confirm({
                                         title: 'Thông báo',
                                         useBootstrap: false,
@@ -57,13 +57,14 @@ var common = {
                                         }
                                     });
                                 }
+                                
                                 else {
                                     $.alert({
                                         title: 'Thông báo lỗi',
                                         useBootstrap: false,
                                         type: 'red',
                                         boxWidth: '500px',
-                                        content: result.Description
+                                        content: result.errorMessage
                                     });
                                 }
                             },
