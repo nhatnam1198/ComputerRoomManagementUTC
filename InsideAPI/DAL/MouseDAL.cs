@@ -137,8 +137,8 @@ namespace InsideAPI.DAL
             string outCode = String.Empty;
             string outMessage = String.Empty;
             int totalRows = 0;
-            StoredProcedureConfigs<Mouse> storedProcedureConfigs = new StoredProcedureConfigs<Mouse>();
-            dbProvider.SetQuery(storedProcedureConfigs._GET_ALL_STORED_PROCEDURE, CommandType.StoredProcedure)
+            
+            dbProvider.SetQuery("MOUSE_GET_ALL", CommandType.StoredProcedure)
                 .SetParameter("ERROR_CODE", System.Data.SqlDbType.NVarChar, DBNull.Value, 100, ParameterDirection.Output)
                 .SetParameter("ERROR_MESSAGE", System.Data.SqlDbType.NVarChar, DBNull.Value, 400, ParameterDirection.Output)
                 .GetList<Mouse>(out mouseList)

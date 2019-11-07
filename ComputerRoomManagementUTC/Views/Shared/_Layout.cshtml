@@ -160,6 +160,29 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Schedule</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("ComputerRoomPaging", "ComputerRoom", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Study Schedule</a></li>
+                                <li>
+                                    <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i>Manage Human</a>
+                                    <ul class="menu-dropdown">
+                                        <li><a href="@Url.Action("ClassPaging", "Class", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Classes</a></li>
+                                        <li><a href="@Url.Action("StudentPaging", "Student", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Manage Students</a></li>
+                                        <li><a href="@Url.Action("TeacherPaging", "Teacher", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Manage Teachers</a></li>
+                                        <li><a href="@Url.Action("EmployeePaging", "Employee", new { PAGE_INDEX = 1, PAGE_SIZE = 10})"><i class="ion ion-ios-circle-outline"></i>Manage Employees</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Manage Basic Data</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("ProvincePaging", "Province", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Province</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#" class="has-dropdown"><i class="ion ion-flag"></i><span>Icons</span></a>
                             <ul class="menu-dropdown">
                                 <li><a href="ion-icons.html"><i class="ion ion-ios-circle-outline"></i> Ion Icons</a></li>
@@ -198,13 +221,13 @@
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
                                         @*<li>
-                                                <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a>
-                                                <ul class="menu-dropdown">
-                                                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
-                                                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                                                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a></li>
-                                                </ul>
-                                            </li>*@
+                            <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a>
+                            <ul class="menu-dropdown">
+                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
+                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
+                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a></li>
+                            </ul>
+                        </li>*@
                                         <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 4</a></li>
                                     </ul>
                                 </li>

@@ -73,3 +73,6 @@ C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementU
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Province\Add.g.cshtml.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Province\Edit.g.cshtml.cs
 C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Province\ProvincePaging.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Class\Add.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Class\ClassPaging.g.cshtml.cs
+C:\Users\Asus\Desktop\Projects\ComputerRoomManagementUTC\ComputerRoomManagementUTC\obj\Debug\netcoreapp2.2\Razor\Views\Class\Edit.g.cshtml.cs

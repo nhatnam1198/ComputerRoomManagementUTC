@@ -28,7 +28,7 @@ namespace ComputerRoomManagementUTC.Controllers
         [HttpGet]
         public async Task<ActionResult> ProvincePaging(BaseCondition<Province> condition)
         {
-            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.PROVINCE_GET_PAGING_BY_ROOM_ID);
+            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.PROVINCE_GET_PAGING);
             var result = await HttpUtilities.PostAsyncApi<ReturnResult<Province>>(apiUrl, JsonConvert.SerializeObject(condition));
             ViewBag.PAGE_INDEX = condition.PAGE_INDEX;
             ViewBag.PAGE_SIZE = condition.PAGE_SIZE;

@@ -1,491 +1,223 @@
 ﻿var masterData = {
-    GetRamSelect2Data: (ramId) => {
-        $("#" + ramId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/Ram/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
 
-                    var filterRules = [];
+    GetComputerSelect2Data: (computerId) => {
+        $.ajax({
+            url: '/Computer/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
 
-                    filterRules.push(filterRule);
 
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-                
+                $("#" + computerId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 
-    GetCpuSelect2Data: (cpuId) => {
-        $("#" + cpuId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/Cpu/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
 
-                    var filterRules = [];
+    GetRamSelect2Data: (ramId) => {
+        $.ajax({
+            url: '/Ram/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
+                
 
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + ramId).select2({
+                    placeholder: "Select a Review",
+                    data: data,
+                    allowClear: true
+                });
             }
-        })
+        });
+    },
+    
+    GetCpuSelect2Data: (cpuId) => {
+        $.ajax({
+            url: '/Cpu/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+                
+
+                $("#" + cpuId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
+            }
+        });
     },
 
     GetKeyboardSelect2Data: (keyboardId) => {
-        $("#" + keyboardId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/Keyboard/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
+        $.ajax({
+            url: '/Keyboard/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRules = [];
+                
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
-
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + keyboardId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 
     GetMouseSelect2Data: (mouseId) => {
-        $("#" + mouseId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/Mouse/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
+        $.ajax({
+            url: '/Mouse/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRules = [];
+                
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
-
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + mouseId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 
     GetMonitorSelect2Data: (monitorId) => {
-        $("#" + monitorId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/Monitor/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
+        $.ajax({
+            url: '/Monitor/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRules = [];
+                
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
-
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + monitorId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 
     GetMonitorSizeSelect2Data: (monitorSizeId) => {
-        $("#" + monitorSizeId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/MonitorSize/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
+        $.ajax({
+            url: '/MonitorSize/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRules = [];
+                
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
-
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + monitorSizeId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 
     GetSpeedSelect2Data: (speedId) => {
-        $("#" + speedId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/Speed/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
+        $.ajax({
+            url: '/Speed/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRules = [];
+                
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
-
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + speedId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 
     GetOpticalDiscSelect2Data: (opticalDiscId) => {
-        $("#" + opticalDiscId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/OpticalDisc/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
+        $.ajax({
+            url: '/OpticalDisc/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRules = [];
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
-
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + opticalDiscId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 
     GetStorageSelect2Data: (storageId) => {
-        $("#" + storageId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/StorageDevice/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
+        $.ajax({
+            url: '/StorageDevice/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRules = [];
+                
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
-
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + storageId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 
     GetStorageCapacitySelect2Data: (storageCapacityId) => {
-        $("#" + storageCapacityId).select2({
-            dropdownParent: $("#add-form"),
-            tags: true,
-            allowClear: true,
-            ajax: {
-                url: '/StorageCapacity/GetAll',
-                type: 'GET',
-                cache: false,
-                success: function (respone) {
-                    console.log(respone)
-                },
-                data: function (params) {
+        $.ajax({
+            url: '/StorageCapacity/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
 
-                    var filterRules = [];
+                
 
-                    var filterRule = {
-                        field: "JobCode",
-                        op: "and_contains",
-                        value: params.term
-                    };
-
-                    filterRules.push(filterRule);
-
-                    var query = {
-                        search: params.term,
-                        filterRules: JSON.stringify(filterRules),
-                        type: 'public',
-                        page: params.page || 1,
-                        rows: 10
-                    };
-                    // Query parameters will be ?search=[term]&type=public
-                    return query;
-                },
-                processResults: function (data) {
-                    var dataFormat = $.map(data.itemList, function (obj) {
-                        obj.id = obj.pK_Id;
-                        obj.text = obj.name;
-                        return obj;
-                    })
-                    return {
-                        results: dataFormat
-                    };
-                },
-
+                $("#" + storageCapacityId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
             }
-        })
+        });
     },
 }

@@ -10,7 +10,6 @@
     <Folder Include="Entity\Models\Subject\" />
     <Folder Include="Entity\Models\Shift\" />
     <Folder Include="Entity\Models\Province\" />
-    <Folder Include="Entity\Models\Class\" />
   </ItemGroup>
 
   <ItemGroup>

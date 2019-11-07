@@ -108,14 +108,24 @@ namespace Common.Common
         public const string COMPUTER_GET_BY_ID = "api/Computer/GetById/{0}";
         public const string COMPUTER_DELETE = "api/Computer/Delete";
         public const string COMPUTER_EDIT_STATUS = "api/Computer/EditStatus";
+        public const string COMPUTER_GET_ALL = "api/Computer/GetAll";
 
         // Province
         public const string PROVINCE_EDIT = "api/Province/Edit";
-        public const string PROVINCE_GET_PAGING_BY_ROOM_ID = "api/Province/GetPagingByComputerId/{0}";
+        public const string PROVINCE_GET_PAGING = "api/Province/GetPaging/";
         public const string PROVINCE_ADD = "api/Province/Add";
         public const string PROVINCE_GET_BY_ID = "api/Province/GetById/{0}";
         public const string PROVINCE_DELETE = "api/Province/Delete";
         public const string PROVINCE_EDIT_STATUS = "api/Province/EditStatus";
         public const string PROVINCE_GET_ALL = "api/Province/GetAll";
+
+        // Class
+        public const string CLASS_EDIT = "api/Class/Edit";
+        public const string CLASS_GET_PAGING = "api/Class/GetPaging/";
+        public const string CLASS_ADD = "api/Class/Add";
+        public const string CLASS_GET_BY_ID = "api/Class/GetById/{0}";
+        public const string CLASS_DELETE = "api/Class/Delete";
+        public const string CLASS_EDIT_STATUS = "api/Class/EditStatus";
+        public const string CLASS_GET_ALL = "api/Class/GetAll";
     }
 }

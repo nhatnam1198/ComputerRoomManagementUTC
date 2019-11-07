@@ -33,6 +33,7 @@
 
 
   <ItemGroup>
+    <Folder Include="Views\Class\" />
     <Folder Include="Views\Province\" />
     <Folder Include="Views\PreLoader\" />
     <Folder Include="Views\StorageCapacity\" />

@@ -40,6 +40,13 @@ namespace InsideAPI.BUS
             return result;
         }
 
+        public ReturnResult<Computer> GetAll()
+        {
+            ComputerDAL computerDAL = new ComputerDAL();
+            var result = computerDAL.GetAll();
+            return result;
+        }
+
         public ReturnResult<Computer> Edit(ComputerEditModel computer)
         {
             ComputerDAL computerDAL = new ComputerDAL();

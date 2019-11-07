@@ -119,6 +119,13 @@ namespace Common.Common
         }
 
         #region INSERT
+        private string _insert_single_stored_procedure_Class
+        {
+            get
+            {
+                return "[dbo].[CLASS_INSERT]";
+            }
+        }
         private string _insert_single_stored_procedure_Province
         {
             get
@@ -219,6 +226,13 @@ namespace Common.Common
         #endregion
 
         #region UPDATE
+        private string _update_single_stored_procedure_Class
+        {
+            get
+            {
+                return "[dbo].[CLASS_EDIT]";
+            }
+        }
         private string _update_single_stored_procedure_Province
         {
             get
@@ -312,6 +326,13 @@ namespace Common.Common
         #endregion
 
         #region DELETE
+        private string _delete_single_stored_procedure_Class
+        {
+            get
+            {
+                return "[dbo].[CLASS_ROOM_DELETE]";
+            }
+        }
         private string _delete_single_stored_procedure_Province
         {
             get
@@ -402,6 +423,13 @@ namespace Common.Common
         #endregion
 
         #region GETPAGING
+        private string _get_paging_stored_procedure_Class
+        {
+            get
+            {
+                return "[dbo].[CLASS_GET_PAGING]";
+            }
+        }
         private string _get_paging_stored_procedure_Province
         {
             get
@@ -494,6 +522,13 @@ namespace Common.Common
         #endregion
 
         #region GETSINGLE
+        private string _get_single_stored_procedure_Class
+        {
+            get
+            {
+                return "[dbo].[CLASS_GET_BY_ID]";
+            }
+        }
         private string _get_single_stored_procedure_Province
         {
             get
@@ -585,6 +620,13 @@ namespace Common.Common
         #endregion
 
         #region GETALL
+        private string _get_all_stored_procedure_Class
+        {
+            get
+            {
+                return "[dbo].[CLASS_GET_ALL]";
+            }
+        }
         private string _get_all_stored_procedure_Province
         {
             get
@@ -666,6 +708,13 @@ namespace Common.Common
         #endregion
 
         #region UPDATESTATUS
+        private string _update_status_stored_procedure_Class
+        {
+            get
+            {
+                return "[dbo].[CLASS_UPDATE_STATUS]";
+            }
+        }
         private string _update_status_stored_procedure_Province
         {
             get

@@ -121,6 +121,24 @@
     <script>
     $(document).ready(function () {
         // Retrive data from datasource
+        @*$.ajax({
+            url: '@Url.Action("GetAll", "Cpu")',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+                console.log(data);
+                
+                $("#CpuName").select2({
+                    placeholder: "Select a Review",
+                    data: data
+                  });  
+            }
+        });*@
+
         masterData.GetCpuSelect2Data("CpuName");
         masterData.GetRamSelect2Data("RamName");
         masterData.GetKeyboardSelect2Data("KeyboardName");
@@ -131,7 +149,7 @@
         masterData.GetOpticalDiscSelect2Data("OpticalDisc");
         masterData.GetStorageSelect2Data("Storage");
         masterData.GetStorageCapacitySelect2Data("StorageCapacity");
-
+        $("#Status").select2();
                 @*$("#add-form").submit(function (event) {
                     event.preventDefault();
                     $("#add-form-btn").attr("disabled", true);
@@ -179,8 +197,8 @@
                 OpticalDiscId: $("#OpticalDisc").select2('val'),
                 Status: $("#Status").val()
             };
-            consoel.log(dataModel);
-            return validateInput();
+            
+            validateInput
             $.ajax({
                 url: '@Url.Action("Add", "Computer")',
                 data: dataModel,

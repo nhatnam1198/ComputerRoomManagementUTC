@@ -29,6 +29,14 @@ namespace InsideAPI.Controllers
             return Ok(result);
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            ComputerBusiness computerBusiness = new ComputerBusiness();
+            var result = computerBusiness.GetAll();
+            return Ok(result);
+        }
+
         [Route("{computerId}")]
         public IActionResult GetById(int computerId)
         {

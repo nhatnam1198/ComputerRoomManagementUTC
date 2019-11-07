@@ -38,6 +38,17 @@ namespace ComputerRoomManagementUTC.Controllers
             return View("ComputerPagingByComputerRoom", result);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Test(BaseCondition<Computer> condition, int computerRoomId)
+        {
+            string apiUrl = _appUrlHelper.GetApiUrl(string.Format(ApiUrlPath.COMPUTER_GET_PAGING_BY_ROOM_ID, computerRoomId));
+            var result = await HttpUtilities.PostAsyncApi<ReturnResult<Computer>>(apiUrl, JsonConvert.SerializeObject(condition));
+            ViewBag.PAGE_INDEX = condition.PAGE_INDEX;
+            ViewBag.PAGE_SIZE = condition.PAGE_SIZE;
+            ComputerRoomId = computerRoomId;
+            ViewBag.ComputerRoomId = computerRoomId;
+            return Json(result);
+        }
         /// <summary>
         /// Display add form view
         /// </summary>
@@ -47,6 +58,14 @@ namespace ComputerRoomManagementUTC.Controllers
         {
             ViewBag.ComputerRoomId = ComputerRoomId;
             return View();
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.COMPUTER_GET_ALL);
+            var result = await HttpUtilities.GetAsyncApi<ReturnResult<Computer>>(apiUrl);
+            return Json(result);
         }
 
         [HttpPost]
@@ -77,5 +96,7 @@ namespace ComputerRoomManagementUTC.Controllers
             var result = await HttpUtilities.PostAsyncApi<ReturnResult<Computer>>(apiUrl, JsonConvert.SerializeObject(computer));
             return Json(result);
         }
+
+
     }
 }

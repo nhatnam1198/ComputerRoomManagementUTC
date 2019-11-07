@@ -22,6 +22,7 @@ namespace InsideAPI.DAL
                 .SetParameter("COMPUTER_ROOM_ID", SqlDbType.Int, computerRoomId, ParameterDirection.Input)
                 .SetParameter("FROM_RECORD", SqlDbType.Int, condition.FROM_RECORD, ParameterDirection.Input)
                 .SetParameter("PAGE_SIZE", SqlDbType.Int, condition.PAGE_SIZE, ParameterDirection.Input)
+                .SetParameter("IN_WHERE", SqlDbType.NVarChar, condition.IN_WHERE, ParameterDirection.Input)
                 .SetParameter("ERROR_CODE", SqlDbType.NVarChar, DBNull.Value, 100, ParameterDirection.Output)
                 .SetParameter("ERROR_MESSAGE", SqlDbType.NVarChar, DBNull.Value, 4000, ParameterDirection.Output)
                 .SetParameter("OUT_TOTAL_ROWS", SqlDbType.Int, DBNull.Value, ParameterDirection.Output)
@@ -30,6 +31,29 @@ namespace InsideAPI.DAL
             dbProvider.GetOutValue("ERROR_CODE", out outCode)
                        .GetOutValue("ERROR_MESSAGE", out outMessage)
                        .GetOutValue("OUT_TOTAL_ROWS", out totalRows);
+            return new ReturnResult<Computer>()
+            {
+                ItemList = computerList,
+                ErrorCode = outCode,
+                ErrorMessage = outMessage,
+                TotalRows = totalRows
+            };
+        }
+
+        public ReturnResult<Computer> GetAll()
+        {
+            List<Computer> computerList = new List<Computer>();
+            DbProvider dbProvider = new DbProvider();
+            string outCode = String.Empty;
+            string outMessage = String.Empty;
+            int totalRows = 0;
+            dbProvider.SetQuery("COMPUTER_GET_ALL", CommandType.StoredProcedure)
+                .SetParameter("ERROR_CODE", System.Data.SqlDbType.NVarChar, DBNull.Value, 100, ParameterDirection.Output)
+                .SetParameter("ERROR_MESSAGE", System.Data.SqlDbType.NVarChar, DBNull.Value, 400, ParameterDirection.Output)
+                .GetList<Computer>(out computerList)
+                .Complete();
+            dbProvider.GetOutValue("ERROR_CODE", out outCode)
+                       .GetOutValue("ERROR_MESSAGE", out outMessage);
             return new ReturnResult<Computer>()
             {
                 ItemList = computerList,
