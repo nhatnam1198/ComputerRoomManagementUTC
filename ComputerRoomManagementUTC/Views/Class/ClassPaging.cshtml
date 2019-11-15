@@ -22,6 +22,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
+                                        <th>Number Of Students</th>
                                         <th>Status</th>
                                         <th>
                                             Action
@@ -34,6 +35,7 @@
                                 <tr>
                                     <td>@item.PK_Id</td>
                                     <td>@item.Name</td>
+                                    <td>@item.NumberOfStudents</td>
                                     @if (@item.Status == ACTIVATE)
                                     {
                                         <td><a href="javascript:void(0)" class="badge badge-success" onclick="UpdateStatus('@item.PK_Id', '@item.Name', '@DEACTIVATE')">Active</a></td>

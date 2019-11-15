@@ -40,7 +40,7 @@ namespace InsideAPI.DAL
             };
         }
 
-        public ReturnResult<Computer> GetAll()
+        public ReturnResult<Computer> GetAll(int id)
         {
             List<Computer> computerList = new List<Computer>();
             DbProvider dbProvider = new DbProvider();
@@ -48,6 +48,7 @@ namespace InsideAPI.DAL
             string outMessage = String.Empty;
             int totalRows = 0;
             dbProvider.SetQuery("COMPUTER_GET_ALL", CommandType.StoredProcedure)
+                .SetParameter("COMPUTER_ROOM_ID", System.Data.SqlDbType.Int, id, ParameterDirection.Input)
                 .SetParameter("ERROR_CODE", System.Data.SqlDbType.NVarChar, DBNull.Value, 100, ParameterDirection.Output)
                 .SetParameter("ERROR_MESSAGE", System.Data.SqlDbType.NVarChar, DBNull.Value, 400, ParameterDirection.Output)
                 .GetList<Computer>(out computerList)

@@ -30,8 +30,12 @@
 
     <!--Selection2 section-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.11/dist/css/select2.min.css">
-    
 
+
+    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">*@
+    <link rel="stylesheet" href="~/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
 </head>
 <body>
 
@@ -80,7 +84,7 @@
                                         <b>Agung Ardiansyah</b> has moved task <b>Fix bug sidebar</b> to <b>Done</b>
                                         <div class="time">12 Hours Ago</div>
                                     </div>
-                                </a>
+                                </a>    
                                 <a href="#" class="dropdown-item">
                                     <img alt="image" src="~/img/avatar/avatar-4.jpeg" class="rounded-circle dropdown-item-img">
                                     <div class="dropdown-item-desc">
@@ -117,7 +121,7 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="@Url.Action("Index", "Home")">Stisla Lite</a>
+                        <a href="@Url.Action("Index", "Home")">HASAGI</a>
                     </div>
                     <div class="sidebar-user">
                         <div class="sidebar-user-picture">
@@ -162,7 +166,7 @@
                         <li>
                             <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Schedule</span></a>
                             <ul class="menu-dropdown">
-                                <li><a href="@Url.Action("ComputerRoomPaging", "ComputerRoom", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Study Schedule</a></li>
+                                <li><a href="@Url.Action("StudySchedulePaging", "StudySchedule", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Study Schedule</a></li>
                                 <li>
                                     <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i>Manage Human</a>
                                     <ul class="menu-dropdown">
@@ -179,65 +183,10 @@
                             <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Manage Basic Data</span></a>
                             <ul class="menu-dropdown">
                                 <li><a href="@Url.Action("ProvincePaging", "Province", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Province</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="has-dropdown"><i class="ion ion-flag"></i><span>Icons</span></a>
-                            <ul class="menu-dropdown">
-                                <li><a href="ion-icons.html"><i class="ion ion-ios-circle-outline"></i> Ion Icons</a></li>
-                                <li><a href="fontawesome.html"><i class="ion ion-ios-circle-outline"></i> Font Awesome</a></li>
-                                <li><a href="flag.html"><i class="ion ion-ios-circle-outline"></i> Flag</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="table.html"><i class="ion ion-clipboard"></i><span>Tables</span></a>
-                        </li>
-                        <li>
-                            <a href="chartjs.html"><i class="ion ion-stats-bars"></i><span>Chart.js</span></a>
-                        </li>
-                        <li>
-                            <a href="simple.html"><i class="ion ion-ios-location-outline"></i><span>Google Maps</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="has-dropdown"><i class="ion ion-ios-copy-outline"></i><span>Examples</span></a>
-                            <ul class="menu-dropdown">
-                                <li><a href="login.html"><i class="ion ion-ios-circle-outline"></i> Login</a></li>
-                                <li><a href="register.html"><i class="ion ion-ios-circle-outline"></i> Register</a></li>
-                                <li><a href="forgot.html"><i class="ion ion-ios-circle-outline"></i> Forgot Password</a></li>
-                                <li><a href="reset.html"><i class="ion ion-ios-circle-outline"></i> Reset Password</a></li>
-                                <li><a href="404.html"><i class="ion ion-ios-circle-outline"></i> 404</a></li>
-                            </ul>
-                        </li>
+                                <li><a href="@Url.Action("ShiftPaging", "Shift", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Shift</a></li>
+                                <li><a href="@Url.Action("SubjectPaging", "Subject", new { PAGE_INDEX = 1, PAGE_SIZE = 10 })"><i class="ion ion-ios-circle-outline"></i>Manage Subject</a></li>
 
-                        <li class="menu-header">More</li>
-                        <li>
-                            <a href="#" class="has-dropdown"><i class="ion ion-ios-nutrition"></i> Click Me</a>
-                            <ul class="menu-dropdown">
-                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Menu 1</a></li>
-                                <li>
-                                    <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Menu 2</a>
-                                    <ul class="menu-dropdown">
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                                        @*<li>
-                            <a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a>
-                            <ul class="menu-dropdown">
-                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
-                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a></li>
                             </ul>
-                        </li>*@
-                                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 4</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="ion ion-heart"></i> Badges <div class="badge badge-primary">10</div></a>
-                        </li>
-                        <li>
-                            <a href="credits.html"><i class="ion ion-ios-information-outline"></i> Credits</a>
                         </li>
                     </ul>
 
@@ -254,15 +203,18 @@
     </div>
 
 
+
+
     <script src="~/modules/jquery.min.js"></script>
     <script src="~/modules/popper.js"></script>
     <script src="~/modules/tooltip.js"></script>
-    <script src="~/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
     <script src="~/modules/nicescroll/jquery.nicescroll.min.js"></script>
     <script src="~/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
     <script src="~/js/sa-functions.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <script src="~/modules/chart.min.js"></script>
     <script src="~/modules/summernote/summernote-lite.js"></script>
@@ -271,6 +223,7 @@
     <script src="~/js/scripts.js"></script>
     <script src="~/js/custom.js"></script>
     <script src="~/js/demo.js"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.11/dist/js/select2.min.js"></script>
     <script src="~/lib/masterData.js"></script>

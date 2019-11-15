@@ -100,6 +100,7 @@ namespace Common.Common
         public const string COMPUTER_ROOM_GET_BY_ID = "api/ComputerRoom/GetById/{0}";
         public const string COMPUTER_ROOM_DELETE = "api/ComputerRoom/Delete";
         public const string COMPUTER_ROOM_EDIT_STATUS = "api/ComputerRoom/EditStatus";
+        public const string COMPUTER_ROOM_GET_ALL = "api/ComputerRoom/GetAll";
 
         // Computer
         public const string COMPUTER_EDIT = "api/Computer/Edit";
@@ -108,7 +109,7 @@ namespace Common.Common
         public const string COMPUTER_GET_BY_ID = "api/Computer/GetById/{0}";
         public const string COMPUTER_DELETE = "api/Computer/Delete";
         public const string COMPUTER_EDIT_STATUS = "api/Computer/EditStatus";
-        public const string COMPUTER_GET_ALL = "api/Computer/GetAll";
+        public const string COMPUTER_GET_ALL = "api/Computer/GetAll/{0}";
 
         // Province
         public const string PROVINCE_EDIT = "api/Province/Edit";
@@ -127,5 +128,50 @@ namespace Common.Common
         public const string CLASS_DELETE = "api/Class/Delete";
         public const string CLASS_EDIT_STATUS = "api/Class/EditStatus";
         public const string CLASS_GET_ALL = "api/Class/GetAll";
+
+        // Shift
+        public const string SHIFT_EDIT = "api/Shift/Edit";
+        public const string SHIFT_GET_PAGING = "api/Shift/GetPaging";
+        public const string SHIFT_ADD = "api/Shift/Add";
+        public const string SHIFT_GET_BY_ID = "api/Shift/GetById/{0}";
+        public const string SHIFT_DELETE = "api/Shift/Delete";
+        public const string SHIFT_EDIT_STATUS = "api/Shift/EditStatus";
+        public const string SHIFT_GET_ALL = "api/Shift/GetAll";
+
+        // Subject
+        public const string SUBJECT_EDIT = "api/Subject/Edit";
+        public const string SUBJECT_GET_PAGING = "api/Subject/GetPaging";
+        public const string SUBJECT_ADD = "api/Subject/Add";
+        public const string SUBJECT_GET_BY_ID = "api/Subject/GetById/{0}";
+        public const string SUBJECT_DELETE = "api/Subject/Delete";
+        public const string SUBJECT_EDIT_STATUS = "api/Subject/EditStatus";
+        public const string SUBJECT_GET_ALL = "api/Subject/GetAll";
+
+        // Teacher
+        public const string TEACHER_EDIT = "api/Teacher/Edit";
+        public const string TEACHER_GET_PAGING = "api/Teacher/GetPaging";
+        public const string TEACHER_ADD = "api/Teacher/Add";
+        public const string TEACHER_GET_BY_ID = "api/Teacher/GetById/{0}";
+        public const string TEACHER_DELETE = "api/Teacher/Delete";
+        public const string TEACHER_EDIT_STATUS = "api/Teacher/EditStatus";
+        public const string TEACHER_GET_ALL = "api/Teacher/GetAll";
+
+        // Employee
+        public const string EMPLOYEE_EDIT = "api/Employee/Edit";
+        public const string EMPLOYEE_GET_PAGING = "api/Employee/GetPaging";
+        public const string EMPLOYEE_ADD = "api/Employee/Add";
+        public const string EMPLOYEE_GET_BY_ID = "api/Employee/GetById/{0}";
+        public const string EMPLOYEE_DELETE = "api/Employee/Delete";
+        public const string EMPLOYEE_EDIT_STATUS = "api/Employee/EditStatus";
+        public const string EMPLOYEE_GET_ALL = "api/Employee/GetAll";
+
+        // Study Schedule 
+        public const string STUDY_SCHEDULE_EDIT = "api/StudySchedule/Edit";
+        public const string STUDY_SCHEDULE_GET_PAGING = "api/StudySchedule/GetPaging";
+        public const string STUDY_SCHEDULE_ADD = "api/StudySchedule/Add";
+        public const string STUDY_SCHEDULE_GET_BY_ID = "api/StudySchedule/GetById/{0}";
+        public const string STUDY_SCHEDULE_DELETE = "api/StudySchedule/Delete";
+        public const string STUDY_SCHEDULE_EDIT_STATUS = "api/StudySchedule/EditStatus";
+        public const string STUDY_SCHEDULE_GET_ALL = "api/StudySchedule/GetAll";
     }
 }

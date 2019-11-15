@@ -9,6 +9,9 @@
         <h1 class="section-header">
             <div>Manage Computers</div>
         </h1>
+        <input type="button" class="btn btn-sm btn-info"
+               value="Export Excel"
+               onclick="location.href='@Url.Action("ExportExcel", "Computer", new { id = ViewBag.ComputerRoomId})'">
         <div class="section-body">
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-12">
@@ -97,93 +100,93 @@
                                 <div class="card card-primary">
 
                                     <div class="card-body">
-                                            <div class="row">
-                                                <div class="form-group col-6">
-                                                    <label for="Computer">Computer Name</label>
-                                                    <select id="Computer" class="select2" style="width:300px" tabindex="1" multiple="multiple">
-                                                        <option></option>
-                                                    </select>
-                                                    <span target="Storage" class="error"></span>
-                                                </div>
-                                                <div class="form-group col-6">
-                                                    <label for="CpuName">CPU Name</label>
-                                                    <select id="CpuName" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="CpuName" class="error"></span>
-                                                </div>
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label for="Computer">Computer Name</label>
+                                                <select id="Computer" class="select2" style="width:300px" tabindex="1" multiple="multiple">
+                                                    <option></option>
+                                                </select>
+                                                <span target="Storage" class="error"></span>
                                             </div>
+                                            <div class="form-group col-6">
+                                                <label for="CpuName">CPU Name</label>
+                                                <select id="CpuName" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="CpuName" class="error"></span>
+                                            </div>
+                                        </div>
 
-                                            <div class="row">
-                                                <div class="form-group col-6">
-                                                    <label for="RamName">Ram Name</label>
-                                                    <select id="RamName" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="RamName" class="error"></span>
-                                                </div>
-                                                <div class="form-group col-6">
-                                                    <label for="KeyboardName">Keyboard Name</label>
-                                                    <select id="KeyboardName" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="KeyboardName" class="error"></span>
-                                                </div>
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label for="RamName">Ram Name</label>
+                                                <select id="RamName" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="RamName" class="error"></span>
                                             </div>
-                                            <div class="row">
-                                                <div class="form-group col-6">
-                                                    <label for="MouseName">Mouse Name</label>
-                                                    <select id="MouseName" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="MouseName" class="error"></span>
-                                                </div>
-                                                <div class="form-group col-6">
-                                                    <label for="Monitor">Monitor Name</label>
-                                                    <select id="Monitor" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="Monitor" class="error"></span>
-                                                </div>
+                                            <div class="form-group col-6">
+                                                <label for="KeyboardName">Keyboard Name</label>
+                                                <select id="KeyboardName" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="KeyboardName" class="error"></span>
                                             </div>
-                                            <div class="row">
-                                                <div class="form-group col-6">
-                                                    <label for="MonitorSize">Monitor Size Name</label>
-                                                    <select id="MonitorSize" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="MonitorSize" class="error"></span>
-                                                </div>
-                                                <div class="form-group col-6">
-                                                    <label for="OpticalDisc">Optical disc Name</label>
-                                                    <select id="OpticalDisc" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="OpticalDisc" class="error"></span>
-                                                </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label for="MouseName">Mouse Name</label>
+                                                <select id="MouseName" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="MouseName" class="error"></span>
                                             </div>
-                                            <div class="row">
-                                                <div class="form-group col-6">
-                                                    <label for="Speed">Speed</label>
-                                                    <select id="Speed" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="Speed" class="error"></span>
-                                                </div>
-                                                <div class="form-group col-6">
-                                                    <label for="Storage">Storage Name</label>
-                                                    <select id="Storage" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="Storage" class="error"></span>
-                                                </div>
+                                            <div class="form-group col-6">
+                                                <label for="Monitor">Monitor Name</label>
+                                                <select id="Monitor" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="Monitor" class="error"></span>
                                             </div>
-                                            <div class="row">
-                                                <div class="form-group col-6">
-                                                    <label for="StorageCapacity">Storage Capacity Name</label>
-                                                    <select id="StorageCapacity" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
-                                                    <span target="StorageCapacity" class="error"></span>
-                                                </div>
-                                                <div class="form-group col-6">
-                                                    <label for="Status">Computer Status</label>
-                                                    <select id="Status" name="Status" class="js-example-basic-single" tabindex="2">
-                                                        <option value="1">Active</option>
-                                                        <option value="0">Deactive</option>
-                                                    </select>
-                                                    <span target="Status" class="error"></span>
-                                                </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label for="MonitorSize">Monitor Size Name</label>
+                                                <select id="MonitorSize" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="MonitorSize" class="error"></span>
                                             </div>
-                                            <div class="form-group">
-                                                <button id="search-btn" type="submit" class="btn btn-primary btn-block">
-                                                    Search
-                                                </button>
+                                            <div class="form-group col-6">
+                                                <label for="OpticalDisc">Optical disc Name</label>
+                                                <select id="OpticalDisc" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="OpticalDisc" class="error"></span>
                                             </div>
-                                        
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label for="Speed">Speed</label>
+                                                <select id="Speed" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="Speed" class="error"></span>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label for="Storage">Storage Name</label>
+                                                <select id="Storage" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="Storage" class="error"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label for="StorageCapacity">Storage Capacity Name</label>
+                                                <select id="StorageCapacity" class="select2" style="width:300px" tabindex="1" multiple="multiple"><option></option></select>
+                                                <span target="StorageCapacity" class="error"></span>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label for="Status">Computer Status</label>
+                                                <select id="Status" name="Status" class="js-example-basic-single" tabindex="2">
+                                                    <option value="1">Active</option>
+                                                    <option value="0">Deactive</option>
+                                                </select>
+                                                <span target="Status" class="error"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button id="search-btn" type="submit" class="btn btn-primary btn-block">
+                                                Search
+                                            </button>
+                                        </div>
+
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -305,7 +308,7 @@
     };
 
     function getFilterData() {
-        TransformComputerToSelect2();
+            TransformComputerToSelect2();
             masterData.GetCpuSelect2Data("CpuName");
             masterData.GetRamSelect2Data("RamName");
             masterData.GetKeyboardSelect2Data("KeyboardName");

@@ -220,4 +220,138 @@
             }
         });
     },
+
+    GetProvinceSelect2Data: (provinceId) => {
+        $.ajax({
+            url: '/Province/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+
+
+                $("#" + provinceId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
+            }
+        });
+    },
+    GetComputerRoomSelect2Data: (computerRoomId) => {
+        $.ajax({
+            url: '/ComputerRoom/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+
+
+                $("#" + computerRoomId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
+            }
+        });
+    },
+    GetTeacherSelect2Data: (teacherId) => {
+        $.ajax({
+            url: '/Teacher/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+
+
+                $("#" + teacherId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
+            }
+        });
+    },
+    GetClassSelect2Data: (classId) => {
+        $.ajax({
+            url: '/Class/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+
+
+                $("#" + classId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
+            }
+        });
+    },
+    GetEmployeeSelect2Data: (employeeId) => {
+        $.ajax({
+            url: '/Employee/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+
+
+                $("#" + employeeId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
+            }
+        });
+    },
+    GetShiftSelect2Data: (shiftId) => {
+        $.ajax({
+            url: '/Shift/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+                console.log(respone);
+
+                $("#" + shiftId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
+            }
+        });
+    },
+    GetSubjectSelect2Data: (subjectId) => {
+        $.ajax({
+            url: '/Subject/GetAll',
+            success: function (respone) {
+                var data = $.map(respone.itemList, function (obj) {
+                    obj.id = obj.pK_Id;
+                    obj.text = obj.name;
+                    return obj;
+                });
+
+
+
+                $("#" + subjectId).select2({
+                    placeholder: "Select a Review",
+                    data: data
+                });
+            }
+        });
+    },
 }

@@ -22,7 +22,7 @@ namespace InsideAPI.BUS
         public ReturnResult<Class> GetAllClassSearched(BaseCondition<Class> condition)
         {
             ClassDAL mouseDAL = new ClassDAL();
-            var result = mouseDAL.GetAllClassSearched(condition);
+            var result = mouseDAL.GetPaging(condition);
             return result;
         }
 

@@ -119,6 +119,41 @@ namespace Common.Common
         }
 
         #region INSERT
+        private string _insert_single_stored_procedure_StudySchedule
+        {
+            get
+            {
+                return "[dbo].[STUDY_SCHEDULE_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_Employee
+        {
+            get
+            {
+                return "[dbo].[EMPLOYEE_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_Teacher
+        {
+            get
+            {
+                return "[dbo].[TEACHER_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_Subject
+        {
+            get
+            {
+                return "[dbo].[SUBJECT_INSERT]";
+            }
+        }
+        private string _insert_single_stored_procedure_Shift
+        {
+            get
+            {
+                return "[dbo].[SHIFT_INSERT]";
+            }
+        }
         private string _insert_single_stored_procedure_Class
         {
             get
@@ -226,6 +261,41 @@ namespace Common.Common
         #endregion
 
         #region UPDATE
+        private string _update_single_stored_procedure_StudySchedule
+        {
+            get
+            {
+                return "[dbo].[STUDY_SCHEDULE_EDIT]";
+            }
+        }
+        private string _update_single_stored_procedure_Employee
+        {
+            get
+            {
+                return "[dbo].[EMPLOYEE_EDIT]";
+            }
+        }
+        private string _update_single_stored_procedure_Teacher
+        {
+            get
+            {
+                return "[dbo].[TEACHER_EDIT]";
+            }
+        }
+        private string _update_single_stored_procedure_Subject
+        {
+            get
+            {
+                return "[dbo].[SUBJECT_EDIT]";
+            }
+        }
+        private string _update_single_stored_procedure_Shift
+        {
+            get
+            {
+                return "[dbo].[SHIFT_EDIT]";
+            }
+        }
         private string _update_single_stored_procedure_Class
         {
             get
@@ -326,11 +396,39 @@ namespace Common.Common
         #endregion
 
         #region DELETE
+        private string _delete_single_stored_procedure_StudySchedule
+        {
+            get
+            {
+                return "[dbo].[STUDY_SCHEDULE_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_Employee
+        {
+            get
+            {
+                return "[dbo].[EMPLOYEE_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_Teacher
+        {
+            get
+            {
+                return "[dbo].[TEACHER_DELETE]";
+            }
+        }
+        private string _delete_single_stored_procedure_Subject
+        {
+            get
+            {
+                return "[dbo].[SUBJECT_DELETE]";
+            }
+        }
         private string _delete_single_stored_procedure_Class
         {
             get
             {
-                return "[dbo].[CLASS_ROOM_DELETE]";
+                return "[dbo].[CLASS_DELETE]";
             }
         }
         private string _delete_single_stored_procedure_Province
@@ -423,6 +521,41 @@ namespace Common.Common
         #endregion
 
         #region GETPAGING
+        private string _get_paging_stored_procedure_StudySchedule
+        {
+            get
+            {
+                return "[dbo].[STUDY_SCHEDULE_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_Employee
+        {
+            get
+            {
+                return "[dbo].[EMPLOYEE_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_Teacher
+        {
+            get
+            {
+                return "[dbo].[TEACHER_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_Subject
+        {
+            get
+            {
+                return "[dbo].[SUBJECT_GET_PAGING]";
+            }
+        }
+        private string _get_paging_stored_procedure_Shift
+        {
+            get
+            {
+                return "[dbo].[SHIFT_GET_PAGING]";
+            }
+        }
         private string _get_paging_stored_procedure_Class
         {
             get
@@ -522,6 +655,41 @@ namespace Common.Common
         #endregion
 
         #region GETSINGLE
+        private string _get_single_stored_procedure_StudySchedule
+        {
+            get
+            {
+                return "[dbo].[STUDY_SCHEDULE_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_Employee
+        {
+            get
+            {
+                return "[dbo].[EMPLOYEE_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_Teacher
+        {
+            get
+            {
+                return "[dbo].[TEACHER_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_Subject
+        {
+            get
+            {
+                return "[dbo].[SUBJECT_GET_BY_ID]";
+            }
+        }
+        private string _get_single_stored_procedure_Shift
+        {
+            get
+            {
+                return "[dbo].[SHIFT_GET_BY_ID]";
+            }
+        }
         private string _get_single_stored_procedure_Class
         {
             get
@@ -627,6 +795,49 @@ namespace Common.Common
                 return "[dbo].[CLASS_GET_ALL]";
             }
         }
+        private string _get_all_stored_procedure_Teacher
+        {
+            get
+            {
+                return "[dbo].[TEACHER_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_Study_Schdule
+        {
+            get
+            {
+                return "[dbo].[STUDY_SCHEDULE_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_ComputerRoom
+        {
+            get
+            {
+                return "[dbo].[COMPUTER_ROOM_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_Employee
+        {
+            get
+            {
+                return "[dbo].[EMPLOYEE_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_Subject
+        {
+            get
+            {
+                return "[dbo].[SUBJECT_GET_ALL]";
+            }
+        }
+        private string _get_all_stored_procedure_Shift
+        {
+            get
+            {
+                return "[dbo].[SHIFT_GET_ALL]";
+            }
+        }
+        
         private string _get_all_stored_procedure_Province
         {
             get
@@ -708,6 +919,41 @@ namespace Common.Common
         #endregion
 
         #region UPDATESTATUS
+        private string _update_status_stored_procedure_StudySchedule
+        {
+            get
+            {
+                return "[dbo].[STUDY_SCHEDULE_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_Employee
+        {
+            get
+            {
+                return "[dbo].[EMPLOYEE_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_Teacher
+        { 
+            get
+            {
+                return "[dbo].[TEACHER_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_Subject
+        {
+            get
+            {
+                return "[dbo].[SUBJECT_UPDATE_STATUS]";
+            }
+        }
+        private string _update_status_stored_procedure_Shift
+        {
+            get
+            {
+                return "[dbo].[SHIFT_UPDATE_STATUS]";
+            }
+        }
         private string _update_status_stored_procedure_Class
         {
             get

@@ -9,6 +9,7 @@ using ComputerRoomManagementUTC.Helper;
 using ComputerRoomManagementUTC.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using OfficeOpenXml;
 
 namespace ComputerRoomManagementUTC.Controllers
 {
@@ -97,6 +98,12 @@ namespace ComputerRoomManagementUTC.Controllers
             return Json(result);
         }
 
-
+        public async Task<ActionResult> ExportExcel(int id)
+        {
+            string apiUrl = _appUrlHelper.GetApiUrl(string.Format(ApiUrlPath.COMPUTER_GET_ALL, id));
+            var result = await HttpUtilities.GetAsyncApi<ReturnResult<ComputerExportModel>>(apiUrl);
+            var file = ExcelUtilities.CreateExcelFile<ComputerExportModel>("computer.xls", result.ItemList);
+            return File(file, "application/ms-excel", "ComputerList.xlsx");
+        }
     }
 }

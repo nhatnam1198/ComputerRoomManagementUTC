@@ -13,14 +13,18 @@ namespace ComputerRoomManagement.Controllers
     public class AccountController : Controller
     {
         private readonly UserSessionHelper _userSessionHelper;
+
         public AccountController(UserSessionHelper userSessionHelper)
         {
+
             _userSessionHelper = userSessionHelper;
         }
 
         [HttpPost]
         public async Task<ActionResult> Login(Login login)
         {
+
+  
             int errorCode = 0;
             string errorMessage = string.Empty;
             var result = await HttpUtilities.PostAsyncApi<ReturnResult<LoginResult>>("https://localhost:44356/api/Account/Login", JsonConvert.SerializeObject(login));

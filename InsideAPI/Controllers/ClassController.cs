@@ -10,29 +10,29 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InsideAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ClassController : ControllerBase
     {
         public IActionResult GetPaging(BaseCondition<Class> condition)
         {
-            ClassBusiness mouseBusiness = new ClassBusiness();
-            var result = mouseBusiness.GetAllClassSearched(condition);
+            ClassBusiness classModelBusiness = new ClassBusiness();
+            var result = classModelBusiness.GetAllClassSearched(condition);
             return Ok(result);
         }
 
-        public IActionResult Add(AddClassViewModel mouse)
+        public IActionResult Add(AddClassViewModel classModel)
         {
-            ClassBusiness mouseBusiness = new ClassBusiness();
-            var result = mouseBusiness.AddClass(mouse);
+            ClassBusiness classModelBusiness = new ClassBusiness();
+            var result = classModelBusiness.AddClass(classModel);
             return Ok(result);
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            ClassBusiness mouseBusiness = new ClassBusiness();
-            var result = mouseBusiness.GetAll();
+            ClassBusiness classModelBusiness = new ClassBusiness();
+            var result = classModelBusiness.GetAll();
             return Ok(result);
         }
 
@@ -40,32 +40,32 @@ namespace InsideAPI.Controllers
         [Route("{Id}")]
         public IActionResult GetById(int Id)
         {
-            ClassBusiness mouseBusiness = new ClassBusiness();
-            var result = mouseBusiness.GetById(Id);
+            ClassBusiness classModelBusiness = new ClassBusiness();
+            var result = classModelBusiness.GetById(Id);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Delete(ClassDeleteViewModel mouse)
+        public IActionResult Delete(ClassDeleteViewModel classModel)
         {
-            ClassBusiness mouseBusiness = new ClassBusiness();
-            var result = mouseBusiness.Delete(mouse);
+            ClassBusiness classModelBusiness = new ClassBusiness();
+            var result = classModelBusiness.Delete(classModel);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Edit(ClassEditViewModel mouse)
+        public IActionResult Edit(ClassEditViewModel classModel)
         {
-            ClassBusiness mouseBusiness = new ClassBusiness();
-            var result = mouseBusiness.Edit(mouse);
+            ClassBusiness classModelBusiness = new ClassBusiness();
+            var result = classModelBusiness.Edit(classModel);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult EditStatus(ClassEditStatusViewModel mouse)
+        public IActionResult EditStatus(ClassEditStatusViewModel classModel)
         {
-            ClassBusiness mouseBusiness = new ClassBusiness();
-            var result = mouseBusiness.EditStatus(mouse);
+            ClassBusiness classModelBusiness = new ClassBusiness();
+            var result = classModelBusiness.EditStatus(classModel);
             return Ok(result);
         }
     }

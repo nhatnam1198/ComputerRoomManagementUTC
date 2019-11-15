@@ -73,6 +73,14 @@ namespace ComputerRoomManagementUTC.Controllers
             return Json(result);
         }
 
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.COMPUTER_ROOM_GET_ALL);
+            var result = await HttpUtilities.GetAsyncApi<ReturnResult<ComputerRoom>>(apiUrl);
+            return Json(result);
+        }
+
         [HttpPost]
         public async Task<ActionResult> Delete(ComputerRoomDeleteViewModel computerRoom)
         {

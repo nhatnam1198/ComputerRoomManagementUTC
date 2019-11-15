@@ -121,24 +121,6 @@
     <script>
     $(document).ready(function () {
         // Retrive data from datasource
-        @*$.ajax({
-            url: '@Url.Action("GetAll", "Cpu")',
-            success: function (respone) {
-                var data = $.map(respone.itemList, function (obj) {
-                    obj.id = obj.pK_Id;
-                    obj.text = obj.name;
-                    return obj;
-                });
-
-                console.log(data);
-                
-                $("#CpuName").select2({
-                    placeholder: "Select a Review",
-                    data: data
-                  });  
-            }
-        });*@
-
         masterData.GetCpuSelect2Data("CpuName");
         masterData.GetRamSelect2Data("RamName");
         masterData.GetKeyboardSelect2Data("KeyboardName");
@@ -149,37 +131,7 @@
         masterData.GetOpticalDiscSelect2Data("OpticalDisc");
         masterData.GetStorageSelect2Data("Storage");
         masterData.GetStorageCapacitySelect2Data("StorageCapacity");
-        $("#Status").select2();
-                @*$("#add-form").submit(function (event) {
-                    event.preventDefault();
-                    $("#add-form-btn").attr("disabled", true);
-                    if (validateInput()) {
-                        $.ajax({
-                            url: '@Url.Action("Add", "Computer")',
-                            data: $("#add-form").serialize(),
-                            type: 'POST',
-                            success: function (respone) {
-                                if (respone.errorCode != 0) {
-                                    $('span[target="ErrorMessage"]').text(respone.errorMessage);
-                                } else {
-                                    $('span[target="ErrorMessage"]').text("Add Computer successfully");
-                                    setTimeout(function () {
-                                        window.location.href = '@Html.Raw(@Url.Action("ComputerPaging", "Computer", new { PAGE_SIZE = 10, PAGE_INDEX = 1, computerRoomId = computerRoomId }))';
-                                    }, 1000)
-                                }
-                            },
-                            error: function (error) {
-                                console.log(error);
-                            },
-                            complete: function () {
-
-                            }
-                        })
-                    }
-                })
-            })*@
-
-
+        
         $("#submit-btn").click(function (event) {
             event.preventDefault();
             var dataModel = {

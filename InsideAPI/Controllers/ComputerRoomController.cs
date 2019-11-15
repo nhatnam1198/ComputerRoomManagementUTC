@@ -28,6 +28,13 @@ namespace InsideAPI.Controllers
             return Ok(result);
         }
 
+        public IActionResult GetAll()
+        {
+            ComputerRoomBusiness computerRoomBusiness = new ComputerRoomBusiness();
+            var result = computerRoomBusiness.GetAll();
+            return Ok(result);
+        }
+
         [HttpGet]
         [Route("{Id}")]
         public IActionResult GetById(int Id)

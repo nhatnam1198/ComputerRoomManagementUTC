@@ -30,10 +30,11 @@ namespace InsideAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        [Route("{Id}")]
+        public IActionResult GetAll(int id)
         {
             ComputerBusiness computerBusiness = new ComputerBusiness();
-            var result = computerBusiness.GetAll();
+            var result = computerBusiness.GetAll(id);
             return Ok(result);
         }
 

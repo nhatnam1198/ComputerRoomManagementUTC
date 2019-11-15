@@ -40,10 +40,10 @@ namespace InsideAPI.BUS
             return result;
         }
 
-        public ReturnResult<Computer> GetAll()
+        public ReturnResult<Computer> GetAll(int id)
         {
             ComputerDAL computerDAL = new ComputerDAL();
-            var result = computerDAL.GetAll();
+            var result = computerDAL.GetAll(id);
             return result;
         }
 

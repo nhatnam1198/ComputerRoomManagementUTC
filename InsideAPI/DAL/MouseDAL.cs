@@ -113,7 +113,7 @@ namespace InsideAPI.DAL
             string outCode = String.Empty;
             string outMessage = String.Empty;
             StoredProcedureConfigs<Mouse> storedProcedureConfigs = new StoredProcedureConfigs<Mouse>();
-            dbProvider.SetQuery(storedProcedureConfigs._INSERT_SINGLE_STORED_PROCEDURE, CommandType.StoredProcedure)
+            dbProvider.SetQuery("MOUSE_INSERT", CommandType.StoredProcedure)
                 .SetParameter("Name", SqlDbType.NVarChar, mouse.Name, ParameterDirection.Input)
                 .SetParameter("Status", SqlDbType.Int, mouse.Status, ParameterDirection.Input)
                 .SetParameter("CreatedBy", SqlDbType.NVarChar, mouse.CreatedBy, ParameterDirection.Input)

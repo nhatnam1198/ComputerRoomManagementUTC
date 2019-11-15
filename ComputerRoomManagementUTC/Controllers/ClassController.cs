@@ -28,11 +28,19 @@ namespace ComputerRoomManagementUTC.Controllers
         [HttpGet]
         public async Task<ActionResult> ClassPaging(BaseCondition<Class> condition)
         {
+            if (_userSessionHelper.GetUserSession().IsUserLoggedIn)
+            {
             string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.CLASS_GET_PAGING);
             var result = await HttpUtilities.PostAsyncApi<ReturnResult<Class>>(apiUrl, JsonConvert.SerializeObject(condition));
             ViewBag.PAGE_INDEX = condition.PAGE_INDEX;
             ViewBag.PAGE_SIZE = condition.PAGE_SIZE;
             return View(result);
+                    
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
         }
 
         /// <summary>
@@ -42,24 +50,48 @@ namespace ComputerRoomManagementUTC.Controllers
         [HttpGet]
         public async Task<ActionResult> Add()
         {
-            return View();
+            if (_userSessionHelper.GetUserSession().IsUserLoggedIn)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
+            ;
         }
 
         [HttpPost]
         public async Task<ActionResult> Add(AddClassViewModel model)
         {
-            model.CreatedBy = _userSessionHelper.GetUserSession().UserName;
-            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.MOUSE_ADD);
-            var result = await HttpUtilities.PostAsyncApi<ReturnResult<Class>>(apiUrl, JsonConvert.SerializeObject(model));
-            return Json(result);
+            if (_userSessionHelper.GetUserSession().IsUserLoggedIn)
+            {
+                model.CreatedBy = _userSessionHelper.GetUserSession().UserName;
+                string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.CLASS_ADD);
+                var result = await HttpUtilities.PostAsyncApi<ReturnResult<Class>>(apiUrl, JsonConvert.SerializeObject(model));
+                return Json(result);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
+            
         }
 
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
-            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.MOUSE_GET_ALL);
-            var result = await HttpUtilities.GetAsyncApi<ReturnResult<Class>>(apiUrl);
-            return Json(result);
+
+            if (_userSessionHelper.GetUserSession().IsUserLoggedIn)
+            {
+                string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.CLASS_GET_ALL);
+                var result = await HttpUtilities.GetAsyncApi<ReturnResult<Class>>(apiUrl);
+                return Json(result);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
         }
 
         /// <summary>
@@ -70,36 +102,66 @@ namespace ComputerRoomManagementUTC.Controllers
         [HttpGet]
         public async Task<ActionResult> Edit(int id)
         {
-            string apiUrl = _appUrlHelper.GetApiUrl(string.Format(ApiUrlPath.MOUSE_GET_BY_ID, id));
+            
+            if (_userSessionHelper.GetUserSession().IsUserLoggedIn)
+            {
+                string apiUrl = _appUrlHelper.GetApiUrl(string.Format(ApiUrlPath.CLASS_GET_BY_ID, id));
             var result = await HttpUtilities.GetAsyncApi<ReturnResult<Class>>(apiUrl);
             return View(result.Item);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
         }
 
         [HttpPost]
         public async Task<ActionResult> Edit(ClassEditViewModel model)
         {
-            model.EditBy = _userSessionHelper.GetUserSession().UserName;
-            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.MOUSE_EDIT);
-            var result = await HttpUtilities.PostAsyncApi<ReturnResult<ClassEditViewModel>>(apiUrl, JsonConvert.SerializeObject(model));
-            return Json(result);
+            
+            if (_userSessionHelper.GetUserSession().IsUserLoggedIn)
+            {
+                model.EditBy = _userSessionHelper.GetUserSession().UserName;
+                string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.CLASS_EDIT);
+                var result = await HttpUtilities.PostAsyncApi<ReturnResult<ClassEditViewModel>>(apiUrl, JsonConvert.SerializeObject(model));
+                return Json(result);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
         }
 
         [HttpPost]
         public async Task<ActionResult> Delete(ClassDeleteViewModel model)
         {
-            model.DeletedBy = _userSessionHelper.GetUserSession().UserName;
-            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.MOUSE_DELETE);
-            var result = await HttpUtilities.PostAsyncApi<ReturnResult<Class>>(apiUrl, JsonConvert.SerializeObject(model));
-            return Json(result);
+            if (_userSessionHelper.GetUserSession().IsUserLoggedIn)
+            {
+                model.DeletedBy = _userSessionHelper.GetUserSession().UserName;
+                string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.CLASS_DELETE);
+                var result = await HttpUtilities.PostAsyncApi<ReturnResult<Class>>(apiUrl, JsonConvert.SerializeObject(model));
+                return Json(result);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
         }
 
         [HttpPost]
         public async Task<ActionResult> EditStatus(ClassEditStatusViewModel model)
         {
-            model.EditBy = _userSessionHelper.GetUserSession().UserName;
-            string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.MOUSE_EDIT_STATUS);
-            var result = await HttpUtilities.PostAsyncApi<ReturnResult<Class>>(apiUrl, JsonConvert.SerializeObject(model));
-            return Json(result);
+            if (_userSessionHelper.GetUserSession().IsUserLoggedIn)
+            {
+                model.EditBy = _userSessionHelper.GetUserSession().UserName;
+                string apiUrl = _appUrlHelper.GetApiUrl(ApiUrlPath.CLASS_EDIT_STATUS);
+                var result = await HttpUtilities.PostAsyncApi<ReturnResult<Class>>(apiUrl, JsonConvert.SerializeObject(model));
+                return Json(result);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
         }
     }
 }
